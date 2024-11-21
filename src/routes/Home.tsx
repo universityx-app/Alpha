@@ -55,7 +55,7 @@ const Home: React.FC = () => {
     <Collapsible key={index} question={item.question} answer={item.answer} />
   ));
   return (
-    <div className="">
+    <div className="bg-white">
       <header className="md:px-16 px-5 pt-10 flex items-center justify-between">
         <div className="hidden md:block">
           <img src={logo} alt="UniversityX" />
