@@ -13,9 +13,11 @@ const Collapsible: React.FC<CollapsibleProp> = ({ question, answer }) => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className={`${isOpen && "rotate-45"} transition outline-none ease-in-out duration-200`}
+          className={`${
+            isOpen && "rotate-45"
+          } transition outline-none ease-in-out duration-200`}
         >
-          <FaPlus />
+          <FaPlus color="#1a1a1a" />
         </button>{" "}
         <p className="font-medium text-lg text-[#1A1A1A]">{question}</p>
       </div>

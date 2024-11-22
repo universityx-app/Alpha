@@ -16,7 +16,7 @@ const CourseCard: React.FC<CourseCardProp> = ({ course, isGrid }) => {
   const course_total = course.completed + course.uncompleted;
   return (
     <Link
-      to={`/student/dashboard/${course.id}`}
+      to={`/dashboard/${course.name}`}
       style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}
       className={`max-w-1/2  bg-white border border-[#66708538] space-y-3 rounded-md ${
         !isGrid ? "p-3 md:p-6" : "p-0 min-h-[20rem] md:min-h-[22.75rem] h-full"

@@ -95,7 +95,7 @@ const Home: React.FC = () => {
       </header>
       <div className="mt-20 px-5">
         <div className="flex flex-col gap-2 md:gap-y-5 items-center justify-center md:w-2/3 w-full px-2 mx-auto">
-          <h3 className="text-4xl lg:text-7xl font-bold font-inter text-center text-[#9C2D9C]">
+          <h3 className=" text-4xl lg:text-7xl font-bold font-inter text-center text-[#9C2D9C]">
             The AI-Powered Future of Education is Here
           </h3>
           <p className=" md:text-2xl text-center py-3  md:w-2/3 text-[#3b3838]">
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
           />
         </div>
         <div className="w-full md:w-[90%] h-40 flex flex-col md:flex-row items-center p-5 md:p-10 rounded-xl shadow-lg border-2 border-[#D9D9D9]">
-          <p className="font-inter md:text-xl md:w-[30%]">
+          <p className="font-inter md:text-xl md:w-[30%] text-[#1a1a1a]">
             Join other <span className="font-bold">forward thinking</span>{" "}
             institution <span className="italic font-bold">transforming</span>{" "}
             education
@@ -161,11 +161,11 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <div className="md:w-[45%] space-y-3">
+          <div className="md:w-[45%] space-y-3 text-[#1A1A1A]">
             <h4 className="font-semibold text-2xl md:text-4xl">
               No Setup, No Maintenance, Just Results
             </h4>
-            <p className="md:text-2xl">
+            <p className="md:text-2xl text-[#2b2a2a]">
               Ensure your entire team is equipped to grow with your business.
               Enterprice integrations and course templates empowers you to
               create, replicate and refine training sections so you can develop
@@ -185,10 +185,10 @@ const Home: React.FC = () => {
           </div>
 
           <div className="w-full md:w-[45%] space-y-3">
-            <h4 className="font-semibold text-2xl md:text-4xl">
+            <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
               AI course creation that drives engagement
             </h4>
-            <p className="md:text-2xl">
+            <p className="md:text-2xl text-[#2b2a2a]">
               Ensure your entire team is equipped to grow with your business.
               Enterprice integrations and course templates empowers you to
               create, replicate and refine training sections so you can develop
@@ -208,10 +208,10 @@ const Home: React.FC = () => {
           </div>
 
           <div className="w-full md:w-[45%] space-y-3">
-            <h4 className="font-semibold text-2xl md:text-4xl">
+            <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
               Gamified learning environment for student
             </h4>
-            <p className="md:text-2xl">
+            <p className="md:text-2xl text-[#2b2a2a]">
               Ensure your entire team is equipped to grow with your business.
               Enterprice integrations and course templates empowers you to
               create, replicate and refine training sections so you can develop
@@ -231,10 +231,10 @@ const Home: React.FC = () => {
           </div>
 
           <div className="w-full md:w-[45%] space-y-3">
-            <h4 className="font-semibold text-2xl md:text-4xl">
+            <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
               Data-Driven Analysics and Real-Time Insights
             </h4>
-            <p className="md:text-2xl">
+            <p className="md:text-2xl text-[#2b2a2a]">
               Ensure your entire team is equipped to grow with your business.
               Enterprice integrations and course templates empowers you to
               create, replicate and refine training sections so you can develop
@@ -254,10 +254,10 @@ const Home: React.FC = () => {
           </div>
 
           <div className="w-full md:w-[45%] space-y-3">
-            <h4 className="font-semibold text-2xl md:text-4xl">
+            <h4 className="font-semibold text-2xl md:text-4xl text-[#1a1a1a]">
               Gamified learning environment for student
             </h4>
-            <p className="md:text-2xl">
+            <p className="md:text-2xl text-[#2b2a2a]">
               Ensure your entire team is equipped to grow with your business.
               Enterprice integrations and course templates empowers you to
               create, replicate and refine training sections so you can develop

@@ -6,6 +6,7 @@ import "./index.css";
 import Home from "./routes/Home.tsx";
 import Layout from "./routes/Layout.tsx";
 import Dashboard from "./routes/Dashboard.tsx";
+import Course from "./routes/Course.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+      },
+      {
+        path: ":course_id",
+        element: <Course />,
       },
     ],
   },
