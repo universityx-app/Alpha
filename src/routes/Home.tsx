@@ -15,7 +15,7 @@ import sec5 from "../assets/images/sec5.png";
 import Scroll from "../components/admin/Scroll";
 import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
-import icon from "../assets/icons/UniXIcon.png";
+// import icon from "../assets/icons/UniXIcon.png";
 import {
   AiFillInstagram,
   AiFillFacebook,
@@ -55,12 +55,12 @@ const Home: React.FC = () => {
     <Collapsible key={index} question={item.question} answer={item.answer} />
   ));
   return (
-    <div className="bg-white">
+    <div className="bg-white ">
       <header className="md:px-16 px-5 pt-10 flex items-center justify-between">
-        <div className="hidden md:block">
+        <div className="">
           <img src={logo} alt="UniversityX" />
         </div>
-        <div className="md:hidden w-16 h-16">
+        {/* <div className="md:hidden w-16 h-16">
           <img
             src={icon}
             alt="Logo"
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
             height={100}
             className="w-full h-full object-contain "
           />
-        </div>
+        </div> */}
         <nav className="flex items-center justify-between md:gap-5 font-inter">
           <div className="md:flex items-center gap-5 hidden">
             <button className="outline-none flex items-center gap-1 text-sm md:text-xl font-medium">
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
           </Link>
         </nav>
       </header>
-      <div className="mt-20">
+      <div className="mt-20 px-5">
         <div className="flex flex-col gap-2 md:gap-y-5 items-center justify-center md:w-2/3 w-full px-2 mx-auto">
           <h3 className="text-4xl lg:text-7xl font-bold font-inter text-center text-[#9C2D9C]">
             The AI-Powered Future of Education is Here
