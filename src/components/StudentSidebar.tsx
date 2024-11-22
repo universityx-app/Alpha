@@ -29,7 +29,7 @@ const StudentSideBar: React.FC<SideBarProps> = ({
       className={`${
         collapseNav
           ? "max-w-2/3 md:max-w-[18.565rem] opacity-100 left-0"
-          : "-left-[100%] md:left-0 max-w-[8.5rem] "
+          : "-left-[100%] lg:left-0 max-w-[8.5rem] "
       } z-50 fixed w-full h-screen top-0 bg-white flex flex-col items-center gap-y-4 md:gap-y-8 py-7 border-r border-[#66708538] transition-all duration-300`}
     >
       <div className=" flex items-center gap-3">

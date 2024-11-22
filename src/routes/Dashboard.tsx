@@ -103,8 +103,8 @@ const Dashboard: React.FC = () => {
     </div>
   ));
   return (
-    <div className="w-full flex flex-col md:flex-row items-start justify-between gap-5">
-      <div className="lg:sticky top-0  w-full md:w-1/2 flex flex-col items-center gap-y-5 md:gap-y-10">
+    <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-5">
+      <div className="lg:sticky top-0  w-full lg:w-1/2 flex flex-col items-center gap-y-5 md:gap-y-10">
         <div
           style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}
           className="bg-white py-5 px-4 md:px-10  w-full min-h-[18rem] md:min-h-[22rem] rounded-2xl border border-[#66708538]"
@@ -149,7 +149,7 @@ const Dashboard: React.FC = () => {
           />
         </div>
       </div>
-      <div className="w-full md:w-1/2 min-h-[30rem] space-y-5 ">
+      <div className="w-full lg:w-1/2 min-h-[30rem] space-y-5 ">
         <div
           style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}
           className="bg-white border border-[#66708538] p-5 flex items-center justify-between"
@@ -165,8 +165,8 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
         <div
-          className={`grid gap-5 ${
-            !isGrid ? "" : "grid-cols-2 auto-cols-[50%]"
+          className={`grid  ${
+            !isGrid ? "gap-5" : "grid-cols-2 auto-cols-[50%] gap-2 md:gap-4"
           } `}
         >
           {course_list.length > 0 ? course_list : <p>No courses available</p>}

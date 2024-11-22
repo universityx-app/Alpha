@@ -19,23 +19,27 @@ const CourseCard: React.FC<CourseCardProp> = ({ course, isGrid }) => {
       to={`/student/dashboard/${course.id}`}
       style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}
       className={`max-w-1/2  bg-white border border-[#66708538] space-y-3 rounded-md ${
-        !isGrid ? "p-6" : "p-0 min-h-[22.75rem] h-full"
+        !isGrid ? "p-3 md:p-6" : "p-0 min-h-[20rem] md:min-h-[22.75rem] h-full"
       }`}
     >
       <div
-        className={` flex items-center flex-wrap gap-5 ${isGrid && "h-[60%]"}`}
+        className={` flex items-center gap-2 md:gap-5 ${
+          isGrid && "h-[60%] flex-wrap"
+        }`}
       >
         <img
           src={course.image}
           alt=""
           className={` ${
             !isGrid ? "w-9 h-9" : "w-full h-[7.8125rem]"
-          } object-contain md:object-cover`}
+          } object-contain md:object-cover `}
         />
         <p
           className={`${
-            !isGrid ? "text-[2rem]" : "px-3 text-[1.7rem]"
-          } text-[#242222] leading-9 font-medium`}
+            !isGrid
+              ? "text-xl md:text-[1.75rem] md:whitespace-nowrap"
+              : "px-3 text-lg leading-6 md:text-[1.7rem]"
+          } text-[#242222] md:leading-9 font-medium`}
         >
           {course.name}
         </p>
@@ -43,7 +47,9 @@ const CourseCard: React.FC<CourseCardProp> = ({ course, isGrid }) => {
 
       <div
         className={`relative w-full min-h-10 flex ${
-          !isGrid ? "flex-col gap-3" : "px-3 flex-row items-center gap-2"
+          !isGrid
+            ? "flex-col gap-3"
+            : "px-1 md:px-3 flex-row items-center gap-2"
         }`}
       >
         <progress
@@ -52,23 +58,17 @@ const CourseCard: React.FC<CourseCardProp> = ({ course, isGrid }) => {
           max={course_total}
           // max={course.total}
         />
-        <p className="text-2xl font-medium text-[#667085]">
-          {Math.floor(
-            (course.completed / course_total) * 100
-            // (course.total === 0 ? 0 : course.completed / course.total) * 100
-          )}
-          %
+        <p className="text-xl md:text-2xl font-medium text-[#667085]">
+          {Math.floor((course.completed / course_total) * 100)}%
         </p>
 
         <p
-          className={`text-2xl text-[#667085] flex items-center gap-2 absolute  ${
-            !isGrid ? "left-14 bottom-0" : "left-3 -bottom-5"
+          className={`whitespace-nowrap md:text-2xl text-[#667085] flex items-center gap-1 md:gap-2 absolute  ${
+            !isGrid ? "left-14 bottom-0" : "left-3 -bottom-5 "
           }`}
         >
           <span className="w-[14px] h-[14px] rounded-full bg-[#d9d9d9]" />
           Completed {course.completed}/{course_total}
-          {/* {course.completed}/{course.total === 0 ? "N/A" : course.total} */}
-          {/* Completed {course_total === 0 ? 0 : course.completed / course_total} */}
         </p>
       </div>
     </Link>

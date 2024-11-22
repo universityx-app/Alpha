@@ -27,9 +27,9 @@ const Layout: React.FC = () => {
             collapseNav
               ? "lg:w-[calc(100%-18.565rem)]"
               : "lg:w-[calc(100%-8.5rem)]"
-          } w-full z-40 transition-all duration-300 fixed shadow shadow-gray-100 top-0 right-0 bg-white py-3 h-[6.5rem] border-b border-l border-[#66708538] flex flex-wrap items-center justify-between gap-x-5 gap-y-5 lg:px-10 px-3 `}
+          } w-full z-40 transition-all duration-300 fixed shadow shadow-gray-100 to-0 right-0 bg-white py-3 h-[6.5rem] border-b border-l border-[#66708538] flex items-center justify-between gap-x-5 gap-y-5 lg:px-10 px-3 `}
         >
-          <div className="flex items-center gap-2 w-1/2 md:w-1/3">
+          <div className="flex items-center gap-2 w-2/3 lg:w-1/3">
             <div className="relative overflow-hidden w-[59px] h-[2.5rem] overflow-y-clip hidden md:flex items-start">
               <img
                 src={bot}
@@ -50,7 +50,7 @@ const Layout: React.FC = () => {
             </span>
           </div>
 
-          <div className=" hidden w-1/2 max-w-[43rem] h-[3.875rem] rounded-full bg-[#F3F3F6] py-[5px] px-2.5 md:flex items-center ">
+          <div className=" hidden w-1/2 max-w-[43rem] h-[3.875rem] rounded-full bg-[#F3F3F6] py-[5px] px-2.5 lg:flex items-center ">
             <input
               type="search"
               placeholder="Search your courses"
@@ -60,8 +60,8 @@ const Layout: React.FC = () => {
               <IoSearchOutline size={30} />
             </button>
           </div>
-          <div className=" flex items-center gap-5">
-            <button className="md:hidden">
+          <div className="w-1/3 md:w-[35%] lg:w-[15%] flex items-center justify-between md:justify-end md:gap-5">
+            <button className="lg:hidden">
               <CiSearch color="#242222" size={28} />
             </button>
             <button>
@@ -70,7 +70,7 @@ const Layout: React.FC = () => {
 
             <button
               onClick={() => setCollapseNav((prev) => !prev)}
-              className="md:hidden"
+              className="lg:hidden"
             >
               <CiMenuFries color="#242222" size={28} />
             </button>
