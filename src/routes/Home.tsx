@@ -4,9 +4,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { BsQuestionCircle, BsSend, BsEnvelope } from "react-icons/bs";
 import { CiCalendar } from "react-icons/ci";
-import bg1 from "../assets/images/bg!.png";
-import bg2 from "../assets/images/bg2.png";
-import bg3 from "../assets/images/bg3.png";
+// import bg1 from "../assets/images/bg!.png";
+import generateLesson from "../assets/images/generateLesson.png";
+import aiChat from "../assets/images/AIChat.png";
+import courseAction from "../assets/images/CourseAction.png";
+// import bg2 from "../assets/images/bg2.png";
+// import bg3 from "../assets/images/bg3.png";
 import sec1 from "../assets/images/sec1.png";
 import sec2 from "../assets/images/sec2.png";
 import sec3 from "../assets/images/sec3.png";
@@ -58,7 +61,7 @@ const Home: React.FC = () => {
     <div className="bg-white ">
       <header className="md:px-16 px-5 pt-10 flex items-center justify-between">
         <div className="">
-          <img src={logo} alt="UniversityX" />
+          <img src={logo} className="w-[10rem] md:w-[15rem]" alt="UniversityX" />
         </div>
         {/* <div className="md:hidden w-16 h-16">
           <img
@@ -87,7 +90,7 @@ const Home: React.FC = () => {
 
           <Link
             to="/signup"
-            className="bg-[#9C2D9C] text-white font-semibold font-inter md:text-xl px-7 md:px-10 py-5 rounded-full"
+            className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-5 md:px-10 py-3 md:py-4 rounded-full border border-transparent"
           >
             Sign Up
           </Link>
@@ -104,10 +107,10 @@ const Home: React.FC = () => {
             drive real results.
           </p>
           <div className="flex items-center gap-3 md:gap-8">
-            <button className="bg-[#9C2D9C] text-white font-semibold font-inter md:text-xl px-5 md:px-10 py-5 rounded-full whitespace-nowrap">
+            <button className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap">
               Book a Demo
             </button>{" "}
-            <button className="flex items-center gap-2 bg-[#fff] border-2 border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-sm md:text-xl whitespace-nowrap md:px-10 px-3 py-5 rounded-full">
+            <button className="flex items-center gap-2 bg-[#fff] border-2 border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-[0.8rem] md:text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full">
               <BsQuestionCircle /> Frequently Asked Question
             </button>{" "}
           </div>
@@ -116,17 +119,19 @@ const Home: React.FC = () => {
         {/*  */}
       </div>
       <div className="flex flex-col items-center relative mt-40 md:px-16  ">
-        <div className="absolute -top-[20%] md:-top-[25%] left-3 md:left-10 z-10">
+        <div className="absolute -top-[20%] md:-top-[25%] left-4 md:left-10 z-10">
           <img
-            src={bg2}
+            // src={bg2}
+            src={generateLesson}
             width={350}
             height={350}
             className="-rotate-12 rounded-xl shadow-2xl shadow-[#9c2c9c]/50 w-[9rem] md:w-[21rem]"
           />
         </div>
-        <div className="absolute -top-[20%] md:-top-[25%] right-3 md:right-10 z-10">
+        <div className="absolute -top-[20%] md:-top-[25%] right-4 md:right-10 z-10">
           <img
-            src={bg3}
+            // src={bg3}
+            src={aiChat}
             width={350}
             height={350}
             className="rotate-12 rounded-xl shadow-2xl shadow-blue-600/50 w-[9rem] md:w-[21rem]"
@@ -134,13 +139,14 @@ const Home: React.FC = () => {
         </div>
         <div className="z-30 px-5 flex justify-center">
           <img
-            src={bg1}
+            // src={bg1}
+            src={courseAction}
             width={1000}
             height={800}
-            className="rounded-2xl w-full h-[16rem] md:h-full md:w-[80%]"
+            className="rounded-2xl w-full h-[14rem] md:h-full md:w-[80%]"
           />
         </div>
-        <div className="w-full md:w-[90%] h-40 flex flex-col md:flex-row items-center p-5 md:p-10 rounded-xl shadow-lg border-2 border-[#D9D9D9]">
+        <div className="w-[96%] md:w-[90%] h-40 flex flex-col md:flex-row items-center p-5 md:p-10 rounded-xl shadow-lg border-2 border-[#D9D9D9]">
           <p className="font-inter md:text-xl md:w-[30%] text-[#1a1a1a]">
             Join other <span className="font-bold">forward thinking</span>{" "}
             institution <span className="italic font-bold">transforming</span>{" "}
