@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { BsQuestionCircle, BsSend, BsEnvelope } from "react-icons/bs";
 import { CiCalendar } from "react-icons/ci";
-import bg1 from "../assets/images/bg!.png";
+// import bg1 from "../assets/images/bg!.png";
 import generateLesson from "../assets/images/generateLesson.png";
 import aiChat from "../assets/images/AIChat.png";
 import courseAction from "../assets/images/CourseAction.png";
