@@ -143,7 +143,7 @@ const Home: React.FC = () => {
             src={courseAction}
             width={1000}
             height={800}
-            className="rounded-2xl w-full h-[16rem] md:h-full md:w-[80%]"
+            className="rounded-2xl w-full h-[14rem] md:h-full md:w-[80%]"
           />
         </div>
         <div className="w-[96%] md:w-[90%] h-40 flex flex-col md:flex-row items-center p-5 md:p-10 rounded-xl shadow-lg border-2 border-[#D9D9D9]">
