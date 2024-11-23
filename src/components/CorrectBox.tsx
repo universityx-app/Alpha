@@ -1,7 +1,7 @@
 import React from "react";
 import cofertti from "../assets/images/confertti.svg";
 
-const CorrectBox: React.FC = () => {
+const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (
     <div className="w-full py-5 px-6 rounded-b-[30px] bg-[#EAFAEF]">
       <div className="flex items-center justify-between">
@@ -32,7 +32,10 @@ const CorrectBox: React.FC = () => {
           <button className="w-[13.25rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#DDEDE2] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
             Why
           </button>
-          <button className="w-[13.25rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#30D25B] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#fff]">
+          <button
+            onClick={onClick}
+            className="w-[13.25rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#30D25B] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#fff]"
+          >
             Continue
           </button>
         </div>

@@ -8,6 +8,7 @@ import Layout from "./routes/Layout.tsx";
 import Dashboard from "./routes/Dashboard.tsx";
 import Course from "./routes/Course.tsx";
 import Module from "./routes/Module.tsx";
+import CompletedCard from "./components/CompletedCard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/:course_name/module",
     element: <Module />,
+  },
+  {
+    path: "/dashboard/complete",
+    element: <CompletedCard />,
   },
 ]);
 
