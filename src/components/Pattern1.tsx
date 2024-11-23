@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Pattern1: React.FC<PatternProps> = ({ title, isActive, hex }) => {
   return (
     <Link
-      to={""}
+      to={`?q=lessons`}
       className="w-full flex items-center justify-start relative mt-[10%]"
     >
       <div className="z-40 absolute left-1/2 -translate-x-1/2  max-w-[184px] h-[182px] w-full flex flex-col items-center justify-center">
@@ -25,7 +25,7 @@ const Pattern1: React.FC<PatternProps> = ({ title, isActive, hex }) => {
           {title}
         </p>
       </div>
-      <div className=" w-[100%] h-[14rem]  text-[#DDDFE3] border border-red-500">
+      <div className=" w-[100%] h-[14rem]  text-[#DDDFE3] ">
         <svg
           viewBox="-2 -2 454 160"
           focusable="false"

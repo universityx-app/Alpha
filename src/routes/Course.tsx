@@ -7,10 +7,16 @@ import { useParams } from "react-router-dom";
 import ProgressMap from "../components/ProgressMap";
 import hex from "../assets/images/completeHex.svg";
 import incompleteHex from "../assets/images/incompleteHex.svg";
+import { useSearchParams, useNavigate } from "react-router-dom";
+import lessonBg from "../assets/images/lessonBg.jpg";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Course: React.FC = () => {
   const { course_id: course_name } = useParams();
-  const [isActive, setIsActive] = useState("");
+  const [searchParams] = useSearchParams();
+  const lessons = searchParams.get("q");
+  const [isActive] = useState("");
+  const navigate = useNavigate();
   const elements = [
     { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
     { id: "5", title: "Utility and Elasticity", completed: false },
@@ -22,11 +28,17 @@ const Course: React.FC = () => {
     //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
     //   { id: "5", title: "Utility and Elasticity", completed: false },
   ];
+  const lessons_list = [
+    { title: "What is Microeconomics", id: 1 },
+    { title: "The Demand Curve", id: 2 },
+    { title: "The Suppy Curve", id: 3 },
+    { title: "Law of Supply and Demand", id: 4 },
+  ];
 
   return (
     <div
       style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}
-      className="flex flex-col md:flex-row justify-between px-2 md:px-8 py-5 w-full min-h-[50rem] bg-white border border-[#66708538]"
+      className="flex flex-col md:flex-row justify-between gap-5 px-2 md:px-8 py-5 w-full min-h-[50rem] bg-white border border-[#66708538]"
     >
       <div
         style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}
@@ -65,12 +77,64 @@ const Course: React.FC = () => {
           </div>
         </div>
       </div>
-      <ProgressMap
-        activeElement={isActive}
-        hex={hex}
-        incompleteHex={incompleteHex}
-        elements={elements}
-      />
+      {!lessons ? (
+        <ProgressMap
+          activeElement={isActive}
+          hex={hex}
+          incompleteHex={incompleteHex}
+          elements={elements}
+        />
+      ) : (
+        <div className="w-1/2 max-w-[45rem] bg-white border border-[#66708538]">
+          <div className="w-full h-[11.25rem] relative">
+            <img src={lessonBg} alt="" className="w-full h-full object-cover" />
+            <button
+              onClick={() => navigate(-1)}
+              className="absolute top-5 left-5"
+            >
+              <IoIosArrowBack color="#1a1a1a" size={20} />
+            </button>
+          </div>
+          <div className=" p-2 space-y-5">
+            <div>
+              <h2 className="font-plus_jakarta font-semibold text-center text-[#242222] text-[2rem] leading-10">
+                Fundamentals of Supply and Demand
+              </h2>
+              <p className="p-2 font-plus_jakarta font-medium text-[22px] leading-7 text-[#667085]">
+                {" "}
+                Examine foundational aspects of microeconomics such as supply
+                and demand & explore how market determine prices
+              </p>
+            </div>
+
+            <div className="p-2 w-full ">
+              <Link
+                to={`/dashboard/${course_name}/module`}
+                className="w-full h-[4.75rem] flex justify-center items-center font-semibold font-plus_jakarta text-[26px] leading-8 py-3 bg-[#9c2d9c] text-white rounded-full"
+              >
+                Begin Lesson
+              </Link>
+            </div>
+            <div className="p-2 space-y-10">
+              {lessons_list.map((lesson) => (
+                <Link
+                  to={`/dashboard/${course_name}/module?id=${lesson.id}`}
+                  key={lesson.id}
+                  style={{ boxShadow: "-4px 4px 0px 0px #EEEEEE" }}
+                  className="w-full rounded-xl border border-[#66708538] py-5 px-6 flex flex-col gap-3"
+                >
+                  <p className="font-inter font-bold text-lg text-[#242222] uppercase">
+                    Level {lesson.id}
+                  </p>
+                  <p className="font-plus_jakarta font-medium text-[26px] leading-8 text-[#667085]">
+                    {lesson.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

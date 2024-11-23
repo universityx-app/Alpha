@@ -7,6 +7,7 @@ import Home from "./routes/Home.tsx";
 import Layout from "./routes/Layout.tsx";
 import Dashboard from "./routes/Dashboard.tsx";
 import Course from "./routes/Course.tsx";
+import Module from "./routes/Module.tsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         element: <Course />,
       },
     ],
+  },
+  {
+    path: "/dashboard/:course_name/module",
+    element: <Module />,
   },
 ]);
 
