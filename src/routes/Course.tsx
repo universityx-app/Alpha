@@ -85,7 +85,7 @@ const Course: React.FC = () => {
           elements={elements}
         />
       ) : (
-        <div className="w-1/2 max-w-[45rem] bg-white border border-[#66708538]">
+        <div className="w-full lg:w-1/2 max-w-[45rem] bg-white border border-[#66708538]">
           <div className="w-full h-[11.25rem] relative">
             <img src={lessonBg} alt="" className="w-full h-full object-cover" />
             <button
