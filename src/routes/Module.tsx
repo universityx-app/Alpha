@@ -25,7 +25,10 @@ const Module: React.FC = () => {
   return (
     <div className="space-y-5 min-h-screen ">
       {isModalOpen ? (
-        <Modal isOpen={isModalOpen} children={<AiChatUI />} />
+        <Modal
+          isOpen={isModalOpen}
+          children={<AiChatUI toggleModal={toggleModal} />}
+        />
       ) : null}
       <div
         style={{ boxShadow: "0px 6px 13.7px 0px #00000012" }}

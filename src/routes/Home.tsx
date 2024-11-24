@@ -2,8 +2,9 @@ import React from "react";
 import logo from "../assets/logo.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { BsQuestionCircle, BsSend, BsEnvelope } from "react-icons/bs";
-import { CiCalendar } from "react-icons/ci";
+import { BsQuestionCircle } from "react-icons/bs";
+// , BsSend, BsEnvelope
+// import { CiCalendar } from "react-icons/ci";
 // import bg1 from "../assets/images/bg!.png";
 import generateLesson from "../assets/images/generateLesson.png";
 import aiChat from "../assets/images/AIChat.png";
@@ -16,7 +17,7 @@ import sec3 from "../assets/images/sec3.png";
 import sec4 from "../assets/images/sec4.png";
 import sec5 from "../assets/images/sec5.png";
 import Scroll from "../components/admin/Scroll";
-import ReviewScroll from "../components/admin/ReviewScroll";
+// import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
 // import icon from "../assets/icons/UniXIcon.png";
 import {
@@ -24,6 +25,7 @@ import {
   AiFillFacebook,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import LogoScroll from "../components/LogoScroll";
 
 const Home: React.FC = () => {
   const faq = [
@@ -61,7 +63,11 @@ const Home: React.FC = () => {
     <div className="bg-white ">
       <header className="md:px-16 px-5 pt-10 flex items-center justify-between">
         <div className="">
-          <img src={logo} className="w-[10rem] md:w-[15rem]" alt="UniversityX" />
+          <img
+            src={logo}
+            className="object-contain w-[8rem] md:w-[15rem]"
+            alt="UniversityX"
+          />
         </div>
         {/* <div className="md:hidden w-16 h-16">
           <img
@@ -90,7 +96,7 @@ const Home: React.FC = () => {
 
           <Link
             to="/signup"
-            className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-5 md:px-10 py-3 md:py-4 rounded-full border border-transparent"
+            className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-3 md:px-10 py-2 md:py-4 rounded-full border border-transparent"
           >
             Sign Up
           </Link>
@@ -99,18 +105,18 @@ const Home: React.FC = () => {
       <div className="mt-20 px-5">
         <div className="flex flex-col gap-2 md:gap-y-5 items-center justify-center md:w-2/3 w-full px-2 mx-auto">
           <h3 className=" text-4xl lg:text-7xl font-bold font-inter text-center text-[#9C2D9C]">
-            The AI-Powered Future of Education is Here
+            Experience the Future of Education with AI-Powered Learning
           </h3>
           <p className=" md:text-2xl text-center py-3  md:w-2/3 text-[#3b3838]">
             Combine the power of artificial intelligence, gamification, and
-            community learning to create engaging educational experiences that
-            drive real results.
+            community learning to create personalized, and engaging educational
+            experiences that drive real results.
           </p>
-          <div className="flex items-center gap-3 md:gap-8">
-            <button className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap">
+          <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-8">
+            <button className="bg-[#9C2D9C] text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap">
               Book a Demo
             </button>{" "}
-            <button className="flex items-center gap-2 bg-[#fff] border-2 border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-[0.8rem] md:text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full">
+            <button className="flex items-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-[0.8rem] md:text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full">
               <BsQuestionCircle /> Frequently Asked Question
             </button>{" "}
           </div>
@@ -152,7 +158,9 @@ const Home: React.FC = () => {
             institution <span className="italic font-bold">transforming</span>{" "}
             education
           </p>
-          <div className="w-full md:w-[70%] min-h-10 border border-red-500"></div>
+          <div className="w-full md:w-[70%] min-h-10">
+            <LogoScroll />
+          </div>
         </div>
       </div>
       <div className="px-5 md:px-20 mt-10 md:mt-20 space-y-20 lg:space-y-32">
@@ -309,7 +317,7 @@ const Home: React.FC = () => {
       </div>
 
       <Scroll />
-      <ReviewScroll />
+      {/* <ReviewScroll /> */}
       <div className="mt-10 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center">
         <p className="text-center text-4xl md:text-5xl font-semibold">
           Frequently Asked Questions
@@ -320,7 +328,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10 md:mt-20 md:mx-16 bg-blue-50 px-5 py-10 md:px-16 flex flex-col gap-5 md:gap-10 items-center ">
+      {/* <div className="mt-10 md:mt-20 md:mx-16 bg-blue-50 px-5 py-10 md:px-16 flex flex-col gap-5 md:gap-10 items-center ">
         <p className="font-semibold font-inter text-3xl md:text-4xl text-center leading-4">
           Get in touch
         </p>
@@ -364,7 +372,7 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <footer className="w-full min-h-[20rem] bg-black md:border-x-[12px] md:border-t-[12px] border-gray-700 mt-10 md:mt-20 px-5 pt-5 md:px-20 md:pt-20 space-y-10">
         <div className="flex flex-wrap items-center justify-between gap-y-5">
           <div className="w-full lg:w-3/5 flex flex-wrap items-start justify-between gap-y-6">
