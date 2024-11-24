@@ -103,7 +103,7 @@ const Dashboard: React.FC = () => {
     </div>
   ));
   return (
-    <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-5">
+    <div className="max-w-[100vw] overflow-x-clip w-full flex flex-col lg:flex-row items-start justify-between gap-5">
       <div className="lg:sticky top-0  w-full lg:w-1/2 flex flex-col items-center gap-y-5 md:gap-y-10">
         <div
           style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}

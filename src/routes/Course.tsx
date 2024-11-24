@@ -100,7 +100,7 @@ const Course: React.FC = () => {
               <h2 className="font-plus_jakarta font-semibold text-center text-[#242222] text-[2rem] leading-10">
                 Fundamentals of Supply and Demand
               </h2>
-              <p className="p-2 font-plus_jakarta font-medium text-[22px] leading-7 text-[#667085]">
+              <p className=" font-plus_jakarta font-medium text-[22px] leading-7 text-[#667085]">
                 {" "}
                 Examine foundational aspects of microeconomics such as supply
                 and demand & explore how market determine prices

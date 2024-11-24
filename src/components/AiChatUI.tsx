@@ -5,7 +5,7 @@ import bot from "../assets/images/bot.png"; // Bot image imported
 
 // Define TypeScript interfaces
 interface Message {
-  sender: 'bot' | 'user';
+  sender: "bot" | "user";
   time: number;
   message: string;
 }
@@ -20,7 +20,8 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
     {
       sender: "bot",
       time: Date.now(),
-      message: "Let's think about the main idea of the lesson so far. What is the primary role of economists according to what you've learned?",
+      message:
+        "Let's think about the main idea of the lesson so far. What is the primary role of economists according to what you've learned?",
     },
   ]);
 
@@ -39,47 +40,52 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       const userMessage: Message = {
         sender: "user",
         time: Date.now(),
-        message: newMessage.trim()
+        message: newMessage.trim(),
       };
 
-      setMessages(prev => [...prev, userMessage]);
+      setMessages((prev) => [...prev, userMessage]);
       setNewMessage("");
 
-      const VITE_API_KEY = process.env.VITE_API_KEY;
+      const API_KEY = import.meta.env.VITE_API_KEY;
 
-      if (!VITE_API_KEY) {
-        throw new Error('OpenAI API key is missing. Please check your environment variables.');
+      if (!API_KEY) {
+        throw new Error(
+          "OpenAI API key is missing. Please check your environment variables."
+        );
       }
 
-      const apiMessages = messages.map(msg => ({
-        role: msg.sender === 'bot' ? 'assistant' : 'user',
-        content: msg.message
+      const apiMessages = messages.map((msg) => ({
+        role: msg.sender === "bot" ? "assistant" : "user",
+        content: msg.message,
       }));
 
       apiMessages.push({
-        role: 'user',
-        content: userMessage.message
+        role: "user",
+        content: userMessage.message,
       });
 
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${VITE_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: "gpt-4",
-          messages: apiMessages,
-          temperature: 0.7,
-          max_tokens: 800,
-        }),
-      });
+      const response = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "gpt-4",
+            messages: apiMessages,
+            temperature: 0.7,
+            max_tokens: 800,
+          }),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(
           errorData.error?.message ||
-          `API request failed with status ${response.status}`
+            `API request failed with status ${response.status}`
         );
       }
 
@@ -88,20 +94,24 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       const botMessage: Message = {
         sender: "bot",
         time: Date.now(),
-        message: data.choices[0].message.content
+        message: data.choices[0].message.content,
       };
 
-      setMessages(prev => [...prev, botMessage]);
+      setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
 
-      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+      const errorMessage =
+        error instanceof Error ? error.message : "An unexpected error occurred";
 
-      setMessages(prev => [...prev, {
-        sender: "bot",
-        time: Date.now(),
-        message: `Sorry, I encountered an error: ${errorMessage}. Please try again.`,
-      }]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          time: Date.now(),
+          message: `Sorry, I encountered an error: ${errorMessage}. Please try again.`,
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }
@@ -113,7 +123,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       role="dialog"
       aria-label="AI Chat Interface"
     >
-      <button 
+      <button
         onClick={toggleModal}
         className="absolute top-5 left-8 p-2 hover:bg-gray-100 rounded-full transition-colors"
         aria-label="Close chat"
@@ -127,7 +137,9 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
           {messages.map((message) => (
             <div
               key={message.time}
-              className={`flex ${message.sender === "bot" ? "justify-start" : "justify-end"}`}
+              className={`flex ${
+                message.sender === "bot" ? "justify-start" : "justify-end"
+              }`}
             >
               <div
                 className={`max-w-[80%] p-4 rounded-2xl ${
@@ -138,15 +150,13 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
               >
                 {message.sender === "bot" && (
                   <div className="flex items-center gap-3 mb-2">
-                    <img
-                      src={bot}
-                      alt="Bot"
-                      className="w-8 h-8 rounded-full"
-                    />
+                    <img src={bot} alt="Bot" className="w-8 h-8 rounded-full" />
                     <span className="font-medium">AI Tutor</span>
                   </div>
                 )}
-                <p className="text-base leading-relaxed text-[#242222]">{message.message}</p>
+                <p className="text-base leading-relaxed text-[#242222]">
+                  {message.message}
+                </p>
               </div>
             </div>
           ))}

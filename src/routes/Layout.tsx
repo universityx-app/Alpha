@@ -85,7 +85,7 @@ const Layout: React.FC = () => {
           </div>
         </div>
         <div
-          className={`bg-[#F3F3F6] z-10 mt-[6.5rem] p-5 md:p-7 lg:p-10 min-h-screen absolute right-0 transition-all duration-300 ${
+          className={`bg-[#F3F3F6] z-10 mt-[6.5rem] p-4 md:p-7 lg:p-10 min-h-screen absolute right-0 transition-all duration-300 ${
             collapseNav
               ? "lg:w-[calc(100%-18.565rem)] w-full"
               : "w-full lg:w-[calc(100%-8.5rem)]"

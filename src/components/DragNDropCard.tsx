@@ -17,7 +17,10 @@ const options = [
   { text: "Economists", value: "economist" },
   { text: "Veterinarian", value: "veterinarian" },
 ];
-const DragNDropCard: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const DragNDropCard: React.FC<{
+  onClick: () => void;
+  toggleModal: () => void;
+}> = ({ onClick, toggleModal }) => {
   const answer = "economist";
 
   const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean>();
@@ -49,7 +52,7 @@ const DragNDropCard: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   };
   const delta = 1;
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 px-5">
       <div className="flex items-center gap-2">
         <div className="w-[3rem] h-[3rem] rounded-full bg-[#667085] flex items-center justify-center">
           <svg
@@ -114,8 +117,11 @@ const DragNDropCard: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           <CorrectBox onClick={onClick} />
         </motion.div>
       )}
-      <div className="flex justify-end w-full mt-10">
-        <button className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]">
+      <div className="flex justify-end w-full mt-10 ">
+        <button
+          onClick={toggleModal}
+          className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+        >
           Chat with AI tutor{" "}
           <svg
             width="36"

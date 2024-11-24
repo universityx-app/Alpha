@@ -6,7 +6,7 @@ const AiGeneratedVideo: React.FC<{
   toggleModal: () => void;
 }> = ({ onClick, toggleModal }) => {
   return (
-    <div className="flex flex-col gap-y-5 ">
+    <div className="flex flex-col gap-y-5 min-h-screen">
       <div className="flex items-center gap-2">
         <div className="w-[3rem] h-[3rem] rounded-full bg-[#2C6FC7] flex items-center justify-center">
           <svg
@@ -27,10 +27,10 @@ const AiGeneratedVideo: React.FC<{
         </span>
       </div>
       <VideoPlayer />
-      <div className="flex justify-between w-full mt-10">
+      <div className="flex flex-wrap gap-4 px-2  justify-between w-full mt-10">
         <button
           onClick={onClick}
-          className="outline-none w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-2xl font-semibold"
+          className="outline-none w-full md:w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
         >
           Continue
         </button>
