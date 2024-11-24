@@ -11,9 +11,9 @@ import aiChat from "../assets/images/AIChat.png";
 import courseAction from "../assets/images/CourseAction.png";
 // import bg2 from "../assets/images/bg2.png";
 // import bg3 from "../assets/images/bg3.png";
-import sec1 from "../assets/images/sec1.png";
-import sec2 from "../assets/images/sec2.png";
-import sec3 from "../assets/images/sec3.png";
+import sec1 from "../assets/images/main1.png";
+import sec2 from "../assets/images/main2.png";
+import sec3 from "../assets/images/main3.png";
 import sec4 from "../assets/images/sec4.png";
 import sec5 from "../assets/images/sec5.png";
 import Scroll from "../components/admin/Scroll";
@@ -32,28 +32,64 @@ const Home: React.FC = () => {
     {
       question: "How does UniversityX help me prepare for my exams",
       answer:
-        "UniversityX helps you prepare for your exams by providing a variety of study materials, including flashcards, practice questions and simulation, We also offer personalized learning path and adaptive assessments to help you reach your academic goals ",
+        "UniversityX offers various study materials, including flashcards, practice questions, and simulations. We also provide personalized learning paths and adaptive assessments to help you meet your academic goals.",
     },
     {
       question:
         "What makes UniversityX different from other learning platforms",
       answer:
-        "UniversityX helps you prepare for your exams by providing a variety of study materials, including flashcards, practice questions and simulation, We also offer personalized learning path and adaptive assessments to help you reach your academic goals ",
+        "UniversityX combines AI-driven content, gamification, and community learning to offer a more engaging, personalized learning experience that adapts to your needs",
     },
     {
       question: "How can i track my process on UniversityX",
       answer:
-        "UniversityX helps you prepare for your exams by providing a variety of study materials, including flashcards, practice questions and simulation, We also offer personalized learning path and adaptive assessments to help you reach your academic goals ",
+        "UniversityX provides detailed analytics and insights to track your learning progress, completion rates, and areas for improvement.",
     },
     {
       question: "Is there a community or a support system on UniversityX",
       answer:
-        "UniversityX helps you prepare for your exams by providing a variety of study materials, including flashcards, practice questions and simulation, We also offer personalized learning path and adaptive assessments to help you reach your academic goals ",
+        "Yes! UniversityX fosters a supportive learning community, allowing users to connect, share resources, and collaborate with peers.",
     },
     {
       question: "Can i use UniversityX on my phone or tablet",
       answer:
-        "UniversityX helps you prepare for your exams by providing a variety of study materials, including flashcards, practice questions and simulation, We also offer personalized learning path and adaptive assessments to help you reach your academic goals ",
+        "Absolutely! UniversityX is fully mobile-responsive, allowing you to access your learning materials on any device.",
+    },
+    {
+      question:
+        "Can I convert my learning materials into different formats with UniversityX?",
+      answer:
+        "Yes! By uploading your learning materials to UniversityX, you can convert them into various formats such as audio, video, podcasts, quizzes, flashcards, and interactive learning modules. This allows you to personalize the learning experience based on your interests and preferred learning method.",
+    },
+    {
+      question: " What types of content can I create with UniversityX?",
+      answer:
+        "UniversityX allows you to create a variety of content, including videos, audio lessons, quizzes, flashcards, and interactive modules, giving you the flexibility to engage learners in multiple ways.",
+    },
+    {
+      question: "Can UniversityX personalize my learning experience?",
+      answer:
+        "Yes! UniversityX offers personalized learning paths, adaptive assessments, and the ability to convert your materials into formats that suit your learning preferences, whether that's visual, auditory, or interactive.",
+    },
+    {
+      question: "Is UniversityX suitable for all types of learners?",
+      answer:
+        "Absolutely! Whether you're a visual learner, auditory learner, or prefer interactive content, UniversityX allows you to tailor the learning experience to suit any style.",
+    },
+    {
+      question: "Does UniversityX offer reporting tools for tracking progress?",
+      answer:
+        "Yes! UniversityX provides detailed insights and reports on learner progress, helping you track completion rates, engagement, and performance.",
+    },
+    {
+      question: "Can I collaborate with others on UniversityX?",
+      answer:
+        "Yes! UniversityX fosters community learning, allowing learners and educators to collaborate, share insights, and engage in peer-supported learning.",
+    },
+    {
+      question: "How does UniversityX help me as a lecturer?",
+      answer:
+        "UniversityX makes teaching easier by providing tools to create customized courses, track student progress, and engage learners with interactive content. With AI-powered course creation, real-time feedback, and valuable data insights, you can enhance the learning experience and focus on teaching while the platform handles the heavy lifting.",
     },
   ];
   const faq_list = faq.map((item, index) => (
@@ -180,10 +216,12 @@ const Home: React.FC = () => {
               No Setup, No Maintenance, Just Results
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              Ensure your entire team is equipped to grow with your business.
-              Enterprice integrations and course templates empowers you to
-              create, replicate and refine training sections so you can develop
-              talent with quality instructions at scale
+              UniversityX is a plug-and-play learning management solution—ready
+              to go from day one. Skip the technical headaches and focus on what
+              truly matters: your students/learners. No developers, no plugins,
+              and no endless updates. With seamless integrations and zero
+              maintenance, you can deliver world-class education, effortlessly
+              and efficiently.
             </p>
           </div>
         </div>
@@ -200,13 +238,14 @@ const Home: React.FC = () => {
 
           <div className="w-full md:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
-              AI course creation that drives engagement
+              AI Course Management That Drives Engagement
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              Ensure your entire team is equipped to grow with your business.
-              Enterprice integrations and course templates empowers you to
-              create, replicate and refine training sections so you can develop
-              talent with quality instructions at scale
+              Our intelligent AI guides educators to create bite-sized,
+              impactful lessons that engage students instantly. With intuitive
+              tools for content creation, you can easily incorporate videos,
+              PDFs, and links into dynamic, adaptive courses that meet the needs
+              of modern learners.
             </p>
           </div>
         </div>
@@ -226,10 +265,12 @@ const Home: React.FC = () => {
               Gamified learning environment for student
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              Ensure your entire team is equipped to grow with your business.
-              Enterprice integrations and course templates empowers you to
-              create, replicate and refine training sections so you can develop
-              talent with quality instructions at scale
+              Turn every lesson into an adventure with UniversityX’s gamified
+              features. From leaderboards to badges and progress tracking,
+              students are motivated to challenge themselves, celebrate
+              achievements, and stay engaged. Track milestones, reward effort,
+              and create an interactive learning environment that keeps students
+              coming back for more.
             </p>
           </div>
         </div>
@@ -246,13 +287,14 @@ const Home: React.FC = () => {
 
           <div className="w-full md:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
-              Data-Driven Analysics and Real-Time Insights
+              Revolutionizing Education With Three Core Pillars
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              Ensure your entire team is equipped to grow with your business.
-              Enterprice integrations and course templates empowers you to
-              create, replicate and refine training sections so you can develop
-              talent with quality instructions at scale
+              UniversityX is built on three guiding principles that transform
+              the way institutions teach, engage, and support students. Through
+              the power of Artificial Intelligence, the excitement of
+              Gamification, and the support of Community Learning, we’re
+              redefining what’s possible in education and training.
             </p>
           </div>
         </div>
@@ -269,13 +311,13 @@ const Home: React.FC = () => {
 
           <div className="w-full md:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1a1a1a]">
-              Gamified learning environment for student
+              Artificial Intelligence
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              Ensure your entire team is equipped to grow with your business.
-              Enterprice integrations and course templates empowers you to
-              create, replicate and refine training sections so you can develop
-              talent with quality instructions at scale
+              From smart content creation to personalized learning pathways, AI
+              is the backbone of every experience. It empowers both instructors
+              and learners to work smarter – it transforms how you teach and how
+              students learn.
             </p>
           </div>
         </div>
@@ -298,7 +340,7 @@ const Home: React.FC = () => {
             <p className="text-lg text-gray-700">Gamification</p>
             <span className="font-medium text-7xl text-[#9C2C9C]">34%</span>
             <p className="text-lg text-gray-700">
-              lower dropout rates in courses with gamified learning elements
+              lower dropout rates in courses with gamified learning elements{" "}
             </p>
           </div>
           <div className="w-full md:w-[30%] h-[15rem] bg-white rounded-xl p-8">
@@ -319,7 +361,7 @@ const Home: React.FC = () => {
       <Scroll />
       {/* <ReviewScroll /> */}
       <div className="mt-5 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center">
-        <p className="text-center text-4xl md:text-5xl font-semibold">
+        <p className="text-center text-4xl md:text-5xl font-semibold text-[#242222]">
           Frequently Asked Questions
         </p>
         <div className="w-full md:w-10/12 min-h-[20rem] bg-gray-100 py-2 px-4">

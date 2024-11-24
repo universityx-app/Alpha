@@ -49,28 +49,28 @@ const Scroll: React.FC = () => {
 
   const scroll_data = [
     {
-      title: "For Universities",
+      title: "For School",
       image: sec6,
       paragraph:
-        "Deliver scalable, high-quality healthcare training and group therapy with a HIPAA certified solution that ensures engaging live sessions for providers and patients",
+        "Deliver personalized, high-quality learning experiences with a unified platform that integrates diverse learning experiences. Empower schools with actionable data insights to enhance student satisfaction, reduce dropout rates, and boost engagement. By improving educational outcomes and streamlining operations, schools can achieve better retention, increase adoption, and drive sustainable revenue growth",
     },
     {
       title: "For Businesses",
       image: sec7,
       paragraph:
-        "Deliver scalable, high-quality healthcare training and group therapy with a HIPAA certified solution that ensures engaging live sessions for providers and patients",
+        "Register and train your staff with programs from our partner institutions, tailored to their schedules. Boost employee skills and performance without disrupting daily operations. Maximize training budgets, achieve high completion rates, and foster growth while ensuring measurable results in workforce development.",
     },
     {
       title: "For Government",
       image: sec8,
       paragraph:
-        "Deliver scalable, high-quality healthcare training and group therapy with a HIPAA certified solution that ensures engaging live sessions for providers and patients",
+        "Enroll employees in career-advancing programs with partner institutions, tailored to fit their schedules. Ensure high completion rates, minimal disruption, and maximum budget efficiency. Boost productivity, governance, and employee growth while achieving measurable training outcomes.",
     },
     {
       title: "For Creators",
       image: sec6,
       paragraph:
-        "Deliver scalable, high-quality healthcare training and group therapy with a HIPAA certified solution that ensures engaging live sessions for providers and patients",
+        "Offer personalized, high-quality training programs with a unified platform that adapts to your needs. Transform your materials into various formats and gain valuable insights to enhance participant engagement. Ensure excellent value for money and grow revenue while delivering impactful learning experiences that meet your audience's needs.",
     },
   ];
 
