@@ -12,13 +12,13 @@ const logos = [cu, miva, nexford, quantic, pau, noun, nutm];
 const LogoScroll: React.FC = () => {
   return (
     <div className="relative overflow-hidden w-full">
-      <div className="flex gap-10 animate-marquee whitespace-nowrap w-[200%]">
+      <div className="flex gap-5 md:gap-10 animate-marquee whitespace-nowrap w-[200%]">
         {logos.map((logo, index) => (
           <img
             key={index}
             src={logo}
             alt={`Logo ${index + 1}`}
-            className="w-[10rem] object-contain"
+            className="w-[5rem] md:w-[8rem] lg:w-[10rem] object-contain"
           />
         ))}
         {logos.map((logo, index) => (
@@ -26,7 +26,7 @@ const LogoScroll: React.FC = () => {
             key={index + logos.length}
             src={logo}
             alt={`Logo ${index + 1}`}
-            className="w-[10rem] object-contain"
+            className="w-[5rem] md:w-[8rem] lg:w-[10rem] object-contain"
           />
         ))}
       </div>
