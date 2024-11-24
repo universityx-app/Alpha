@@ -116,7 +116,7 @@ const Home: React.FC = () => {
             <button className="bg-[#9C2D9C] text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap">
               Book a Demo
             </button>{" "}
-            <button className="flex items-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-[0.8rem] md:text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full">
+            <button className="flex items-center justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full">
               <BsQuestionCircle /> Frequently Asked Question
             </button>{" "}
           </div>
@@ -318,7 +318,7 @@ const Home: React.FC = () => {
 
       <Scroll />
       {/* <ReviewScroll /> */}
-      <div className="mt-10 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center">
+      <div className="mt-5 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center">
         <p className="text-center text-4xl md:text-5xl font-semibold">
           Frequently Asked Questions
         </p>

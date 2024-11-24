@@ -89,9 +89,9 @@ const Scroll: React.FC = () => {
   ));
 
   return (
-    <div className="px-5 md:px-16 py-10 w-full min-h-[26.5rem] mt-10 md:mt-20 bg-white space-y-5 md:space-y-10">
+    <div className="px-5 md:px-16 py-10 w-full min-h-[26.5rem] mt-5 md:mt-20 bg-white space-y-5 md:space-y-10">
       <div className="flex items-center justify-between">
-        <p className="text-4xl text-[#1A1A1A]">
+        <p className="text-2xl md:text-4xl text-[#1A1A1A]">
           One platform, Endless possibilities
         </p>
         <div className="flex items-center gap-5">
@@ -121,7 +121,7 @@ const Scroll: React.FC = () => {
       </div>
       <div
         ref={horizontalScrollRef}
-        className="grid hide_scrollbar grid-flow-col gap-4 auto-cols-[85%] md:auto-cols-[45%] lg:auto-cols-[30%] overflow-x-auto overscroll-contain"
+        className="grid hide_scrollbar grid-flow-col gap-4 auto-cols-[85%] md:auto-cols-[45%] lg:auto-cols-[30%] overflow-x-auto overscroll-contain py-5"
       >
         {scroll_items}
       </div>
