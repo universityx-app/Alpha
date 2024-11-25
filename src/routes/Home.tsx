@@ -7,7 +7,7 @@ import { BsQuestionCircle } from "react-icons/bs";
 // import { CiCalendar } from "react-icons/ci";
 // import bg1 from "../assets/images/bg!.png";
 import generateLesson from "../assets/images/generateLesson.png";
-import replacement from '../assets/images/replacement.png';
+import replacement from "../assets/images/replacement.png";
 import aiChat from "../assets/images/AIChat.png";
 // import courseAction from "../assets/images/CourseAction.png";
 // import bg2 from "../assets/images/bg2.png";
@@ -20,6 +20,7 @@ import sec5 from "../assets/images/sec5.png";
 import Scroll from "../components/admin/Scroll";
 // import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
+import { useNavigate } from "react-router-dom";
 // import icon from "../assets/icons/UniXIcon.png";
 import {
   AiFillInstagram,
@@ -29,6 +30,7 @@ import {
 import LogoScroll from "../components/LogoScroll";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
   const faq = [
     {
       question: "How does UniversityX help me prepare for my exams",
@@ -66,8 +68,13 @@ const Home: React.FC = () => {
   const faq_list = faq.map((item, index) => (
     <Collapsible key={index} question={item.question} answer={item.answer} />
   ));
-  const scrollToFaq = () => {
-    const faqElement = document.getElementById("faq");
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate("/dashboard");
+  };
+
+  const scrollToPoint = (point: string) => {
+    const faqElement = document.getElementById(point);
     if (faqElement) {
       faqElement.scrollIntoView({ behavior: "smooth" });
     }
@@ -100,7 +107,7 @@ const Home: React.FC = () => {
           </div> */}
           <Link
             to="/programs"
-            className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]"
+            className="outline-none flex items-center gap-1 text-lg font-medium text-[#242222]"
           >
             Programs
           </Link>
@@ -124,14 +131,14 @@ const Home: React.FC = () => {
             experiences that drive real results.
           </p>
           <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-8">
-            <Link
-              to="/programs"
+            <button
+              onClick={() => scrollToPoint("demo_form")}
               className="bg-[#9C2D9C]  text-center text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap"
             >
               Book a Demo
-            </Link>{" "}
+            </button>{" "}
             <button
-              onClick={scrollToFaq}
+              onClick={() => scrollToPoint("faq")}
               className="flex items-center justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full"
             >
               <BsQuestionCircle /> Frequently Asked Question
@@ -340,6 +347,95 @@ const Home: React.FC = () => {
       </div>
 
       <Scroll />
+      <div
+        id="demo_form"
+        className="p-4 md:p-12 w-full lg:w-3/5 mx-auto flex flex-col gap-8 items-center border border-[#66708538] rounded-[20px] bg-white text-[#242222]"
+      >
+        <div className="space-y-5">
+          <p className="font-inter font-bold text-3xl md:text-6xl text-black">
+            Try Demo Now
+          </p>
+          <p className="font-plus_jakarta font-semibold text-xl md:text-[1.8rem] md:leading-8 text-[#667085]">
+            Learn about our product with a live demonstration and have your
+            questions answered by one of our experts.
+          </p>
+        </div>
+
+        <form
+          name="demo_form"
+          method="POST"
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col gap-10"
+        >
+          <div className="flex flex-col gap-4">
+            <label
+              htmlFor="name"
+              className="font-plus_jakarta font-semibold text-xl md:text-[2rem] leading-6 text-[#242222]"
+            >
+              What is your name? <span className="text-[#A02240]">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="full name"
+              className="w-full min-h-[5rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <label
+              htmlFor="school"
+              className="font-plus_jakarta font-semibold text-xl md:text-[2rem] leading-6 text-[#242222]"
+            >
+              What is name the of your school?{" "}
+              <span className="text-[#A02240]">*</span>
+            </label>
+            <input
+              type="text"
+              id="school"
+              name="school_name"
+              className="w-full min-h-[5rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <label
+              htmlFor="email"
+              className="font-plus_jakarta  font-semibold text-xl md:text-[2rem] leading-6 text-[#242222]"
+            >
+              What is your email <span className="text-[#A02240]">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full min-h-[5rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <label
+              htmlFor="interest"
+              className="font-plus_jakarta font-semibold text-xl md:text-[2rem] leading-6 text-[#242222]"
+            >
+              What would you like to use UniversityX for?{" "}
+              <span className="text-[#A02240]">*</span>
+            </label>
+            <textarea
+              id="interest"
+              name="interest"
+              className="w-full min-h-[8rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-[#9c2d9c] p-5 text-white font-plus_jakarta font-bold text-2xl md:text-4xl"
+          >
+            Book Demo
+          </button>
+        </form>
+      </div>
       {/* <ReviewScroll /> */}
       <div
         id="faq"

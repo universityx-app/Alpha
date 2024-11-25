@@ -201,7 +201,7 @@ const Programs: React.FC = () => {
       >
         <div className="space-y-5">
           <p className="font-inter font-bold text-3xl md:text-6xl text-black">
-            Try Demo Now
+            Book a Spot
           </p>
           <p className="font-plus_jakarta font-semibold text-xl md:text-[1.8rem] md:leading-8 text-[#667085]">
             Learn about our product with a live demonstration and have your
@@ -210,7 +210,7 @@ const Programs: React.FC = () => {
         </div>
 
         <form
-          name="demo-form"
+          name="student-demo-form"
           method="POST"
           onSubmit={handleSubmit}
           className="w-full flex flex-col gap-10"
@@ -257,16 +257,41 @@ const Programs: React.FC = () => {
               required
               name="interest"
               id="interest"
-              className="w-full min-h-[5rem] outline-none rounded-lg border text-3xl text-[#242222] border-[#B9B3B3] bg-white py-2.5 px-[14px]"
+              className="w-full min-h-[5rem] outline-none rounded-lg border text-2xl md:text-3xl text-[#242222] border-[#B9B3B3] bg-white py-2.5 px-[14px]"
             >
-              <option value="">Select an option</option>
-              <option value="Miva Open University">Miva Open University</option>
-              <option value="Nexford University">Nexford University</option>
-              <option value="Pan Atlantic University">
+              <option value="" className="text-xl md:text-2xl text-[#242222]">
+                Select an option
+              </option>
+              <option
+                value="Miva Open University"
+                className="text-xl mdtext-2xl text-[#242222]"
+              >
+                Miva Open University
+              </option>
+              <option
+                value="Nexford University"
+                className="text-xl md:text-2xl text-[#242222]"
+              >
+                Nexford University
+              </option>
+              <option
+                value="Pan Atlantic University"
+                className="text-xl md:text-2xl text-[#242222]"
+              >
                 Pan Atlantic University
               </option>
-              <option value="Convenant University">Covenant University</option>
-              <option value="Others">Others</option>
+              <option
+                value="Convenant University"
+                className="text-xl md:text-2xl text-[#242222]"
+              >
+                Covenant University
+              </option>
+              <option
+                value="Others"
+                className="text-xl md:text-2xl  text-[#242222]"
+              >
+                Others
+              </option>
             </select>
           </div>
           <button
