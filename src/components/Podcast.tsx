@@ -1,5 +1,6 @@
 import React from "react";
 import PodcastCard from "./PodcastCard";
+import theAudio from '../assets/The Power of Choice and Opportunity Cost.wav'
 
 const Podcast: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
   onClick,
@@ -11,6 +12,7 @@ const Podcast: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
       title: "The Power of Choices",
       description:
         "Explore how individuals and businesses make decisions about resource allocation, the role of opportunity cost.",
+        audioSrc: theAudio
     },
     {
       number: 2,
