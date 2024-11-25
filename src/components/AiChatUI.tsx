@@ -24,7 +24,7 @@ const TypingAnimation = () => {
   );
 };
 
-const Typewriter = ({ text }: { text: string }) => {
+const Typewriter = ({ text, scrollToBottom }: { text: string; scrollToBottom: () => void }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -33,11 +33,12 @@ const Typewriter = ({ text }: { text: string }) => {
       const timeout = setTimeout(() => {
         setDisplayedText(prev => prev + text[currentIndex]);
         setCurrentIndex(prev => prev + 1);
+        scrollToBottom();
       }, 30);
 
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, text]);
+  }, [currentIndex, text, scrollToBottom]);
 
   return <span>{displayedText}</span>;
 };
@@ -56,13 +57,17 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
   const [newMessage, setNewMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Auto-scroll to bottom whenever messages change
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
+  // Only scroll to bottom on new messages, not during typing
   useEffect(() => {
-    scrollToBottom();
+    if (!messages[messages.length - 1]?.isTyping) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -73,7 +78,6 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
     try {
       setIsLoading(true);
 
-      // Add user message
       const userMessage: Message = {
         sender: "user",
         time: Date.now(),
@@ -83,7 +87,6 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       setMessages(prev => [...prev, userMessage]);
       setNewMessage("");
 
-      // Add temporary bot message with typing animation
       const tempBotMessage: Message = {
         sender: "bot",
         time: Date.now(),
@@ -201,13 +204,13 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
                   {message.isTyping ? (
                     <TypingAnimation />
                   ) : (
-                    <Typewriter text={message.message} />
+                    <Typewriter text={message.message} scrollToBottom={scrollToBottom} />
                   )}
                 </p>
               </div>
             </div>
           ))}
-          <div ref={messagesEndRef} /> {/* Invisible element for scrolling */}
+          <div ref={messagesEndRef} />
         </div>
 
         <form onSubmit={handleFormSubmit} className="relative">
