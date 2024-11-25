@@ -298,16 +298,13 @@ const DragNDropCard: React.FC<{
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <IncorrectBox whyText="
-          Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning.
-          "
-          onClick={onClick}/>
+          <IncorrectBox whyText="Minerva doesn't need an economist because her planet has endless resources" onClick={onClick} />
         </motion.div>
       )}
       <div className="flex justify-end w-full mt-10 ">
         <button
           onClick={toggleModal}
-          className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+          className="text-2xl font-semibold gap-2 text-[#242222] w-[22rem] h-[4rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
         >
           Chat with AI tutor
           <svg

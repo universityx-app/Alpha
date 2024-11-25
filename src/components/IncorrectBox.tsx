@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 // import cofertti from "../assets/images/confertti.svg";
-import xcircle from '../assets/icons/XCircle.svg';
+import xcircle from "../assets/icons/XCircle.svg";
 import { IoMdClose } from "react-icons/io";
-
 
 interface PopupProps {
   show: boolean;
@@ -16,23 +15,24 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
-      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[20rem] md:w-[25rem]" onClick={(e) => e.stopPropagation()}>
-
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white text-black p-6 rounded-lg shadow-lg w-[20rem] md:w-[25rem]"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="outline-none text-4xl mb-2" onClick={onClose}>
           <IoMdClose color="#242222" />
         </button>
         {children}
-
       </div>
     </div>
   );
 };
 
-
-
-
-const IncorrectBox: React.FC<{ onClick: () => void, whyText: string }> = ({ onClick, whyText }) => {
+const IncorrectBox: React.FC<{ whyText: string, onClick: () => void }> = ({ whyText, onClick }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleButtonClick = () => {
@@ -44,11 +44,11 @@ const IncorrectBox: React.FC<{ onClick: () => void, whyText: string }> = ({ onCl
     onClick();
   };
 
-
   return (
     <div className="flex flex-col gap-y-5 md:flex-row items-center justify-between w-full py-5 px-6 rounded-b-[30px] bg-[#FEF2F2]">
       <div className="md:w-1/3 flex items-center pl-3">
         <img src={xcircle} alt="" />
+
         <p className="font-plus_jakarta font-bold text-4xl text-[#242222]">
           Incorrect
         </p>
@@ -73,7 +73,8 @@ const IncorrectBox: React.FC<{ onClick: () => void, whyText: string }> = ({ onCl
       <div className=" flex items-center gap-6">
         <button
           onClick={handleButtonClick}
-          className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#667085] font-plus_jakarta font-semibold text-[26px] leading-8 text-white">
+          className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#667085] font-plus_jakarta font-semibold text-[26px] leading-8 text-white"
+        >
           Why
         </button>
         {/* <button
