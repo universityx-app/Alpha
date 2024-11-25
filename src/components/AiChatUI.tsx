@@ -1,9 +1,10 @@
 import React, { FormEvent, useState, useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { TbSend2 } from "react-icons/tb";
-import bot from "../assets/images/bot.png"; // Bot image imported
+import bot from "../assets/images/bot.png";
 
 
+// TypeScript interfaces
 interface Message {
   sender: "bot" | "user";
   time: number;
@@ -15,36 +16,48 @@ interface AiChatUIProps {
   toggleModal: () => void;
 }
 
+// Type animation component
+const TypingAnimation = () => {
+  return (
+    <div className="flex space-x-2 p-2">
+      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+    </div>
+  );
+};
+
+// Typing effect component
+const Typewriter = ({ text }: { text: string }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 30);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text]);
+
+  return <span>{displayedText}</span>;
+};
+
 const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot",
       time: Date.now(),
       message: "Let's think about the main idea of the lesson so far. What is the primary role of economists according to what you've learned?",
-      isTyping: false
+      isTyping: false,
     },
   ]);
+
   const [newMessage, setNewMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const TypeWriter: React.FC<{ text: string; onComplete: () => void }> = ({ text, onComplete }) => {
-    const [displayedText, setDisplayedText] = useState("");
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    useEffect(() => {
-      if (currentIndex < text.length) {
-        const timeout = setTimeout(() => {
-          setDisplayedText(prev => prev + text[currentIndex]);
-          setCurrentIndex(currentIndex + 1);
-        }, 20); // Adjust speed here
-        return () => clearTimeout(timeout);
-      } else {
-        onComplete();
-      }
-    }, [currentIndex, onComplete, text]);
-  
-    return <span>{displayedText}</span>;
-  };
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,15 +67,25 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
     try {
       setIsLoading(true);
 
-      // Add user message immediately
+      // Add user message
       const userMessage: Message = {
         sender: "user",
         time: Date.now(),
         message: newMessage.trim(),
       };
 
-      setMessages((prev) => [...prev, userMessage]);
+      setMessages(prev => [...prev, userMessage]);
       setNewMessage("");
+
+      // Add temporary bot message with typing animation
+      const tempBotMessage: Message = {
+        sender: "bot",
+        time: Date.now(),
+        message: "",
+        isTyping: true,
+      };
+
+      setMessages(prev => [...prev, tempBotMessage]);
 
       const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -70,7 +93,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
         throw new Error("OpenAI API key is missing. Please check your environment variables.");
       }
 
-      const apiMessages = messages.map((msg) => ({
+      const apiMessages = messages.map(msg => ({
         role: msg.sender === "bot" ? "assistant" : "user",
         content: msg.message,
       }));
@@ -102,33 +125,36 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       }
 
       const data = await response.json();
-    
-      const botMessage: Message = {
-        sender: "bot",
-        time: Date.now(),
-        message: data.choices[0].message.content,
-        isTyping: true
-      };
 
-      setMessages((prev) => [...prev, botMessage]);
+      // Remove typing message and add actual bot message
+      setMessages(prev => {
+        const filteredMessages = prev.filter(msg => !msg.isTyping);
+        return [...filteredMessages, {
+          sender: "bot",
+          time: Date.now(),
+          message: data.choices[0].message.content,
+          isTyping: false,
+        }];
+      });
+
     } catch (error) {
       console.error("Error:", error);
       const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
       
-      setMessages((prev) => [
-        ...prev,
-        {
+      setMessages(prev => {
+        const filteredMessages = prev.filter(msg => !msg.isTyping);
+        return [...filteredMessages, {
           sender: "bot",
           time: Date.now(),
           message: `Sorry, I encountered an error: ${errorMessage}. Please try again.`,
-          isTyping: true
-        },
-      ]);
+          isTyping: false,
+        }];
+      });
     } finally {
       setIsLoading(false);
     }
   };
-  
+
   return (
     <div
       className="fixed px-8 py-5 top-0 right-0 w-[85%] md:w-[70%] lg:w-[40%] h-screen bg-white outline-none"
@@ -148,9 +174,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
           {messages.map((message) => (
             <div
               key={message.time}
-              className={`flex ${
-                message.sender === "bot" ? "justify-start" : "justify-end"
-              }`}
+              className={`flex ${message.sender === "bot" ? "justify-start" : "justify-end"}`}
             >
               <div
                 className={`max-w-[80%] p-4 rounded-2xl ${
@@ -168,21 +192,10 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
                 <p className={`text-base leading-relaxed ${
                   message.sender === "bot" ? "text-[#242222]" : "text-white"
                 }`}>
-                  {message.sender === "bot" && message.isTyping ? (
-                    <TypeWriter 
-                      text={message.message} 
-                      onComplete={() => {
-                        setMessages(prev => 
-                          prev.map(msg => 
-                            msg.time === message.time 
-                              ? { ...msg, isTyping: false }
-                              : msg
-                          )
-                        );
-                      }}
-                    />
+                  {message.isTyping ? (
+                    <TypingAnimation />
                   ) : (
-                    message.message
+                    <Typewriter text={message.message} />
                   )}
                 </p>
               </div>
