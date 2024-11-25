@@ -16,7 +16,7 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
-      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[25rem]" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[20rem] md:w-[25rem]" onClick={(e) => e.stopPropagation()}>
 
         <button className="outline-none text-4xl mb-2" onClick={onClose}>
           <IoMdClose color="#242222" />
@@ -30,7 +30,7 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
 
 
-const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const CorrectBox: React.FC<{ onClick: () => void, whyText: string }> = ({ onClick, whyText }) => {
 
   const [showPopup, setShowPopup] = useState(false);
 
@@ -82,7 +82,8 @@ const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
       </div>
       <Popup show={showPopup} onClose={handleClosePopup} >
         <p>
-          Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning.
+          {/* Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning. */}
+          {whyText}
         </p>
       </Popup>
     </div>

@@ -5,7 +5,8 @@ import { IoSearchOutline } from "react-icons/io5";
 import { PiBellSimple } from "react-icons/pi";
 // import bot from "../assets/images/bot.png";
 import { Outlet } from "react-router-dom";
-import profile from "../assets/images/oluwatobi-fasipe-e8etaVo85AY-unsplash.jpg";
+// import profile from "../assets/images/oluwatobi-fasipe-e8etaVo85AY-unsplash.jpg";
+import user from '../assets/images/user.png';
 import { CiMenuFries, CiSearch } from "react-icons/ci";
 
 const Layout: React.FC = () => {
@@ -39,9 +40,10 @@ const Layout: React.FC = () => {
             </div> */}
             <div className="w-[4rem] h-[2.5rem] rounded-full md:hidden">
               <img
-                src={profile}
+                // src={profile}
+                src={user}
                 alt=""
-                className="w-full h-full rounded-full object-cover"
+                className="w-10 h-10 rounded-full object-cover"
               />
             </div>
 
@@ -77,9 +79,10 @@ const Layout: React.FC = () => {
 
             <div className="w-[3.2rem] h-[3.2rem] hidden md:flex">
               <img
-                src={profile}
+                // src={profile}
+                src={user}
                 alt=""
-                className="w-full h-full rounded-full object-cover"
+                className="w-15 h-15 rounded-full object-cover"
               />
             </div>
           </div>

@@ -242,14 +242,14 @@ const DragNDropCard: React.FC<{
         </span>
       </div>
       <div className="flex flex-col items-center gap-10 pb-10">
-        <p className="font-medium text-[2.5rem] leading-[3rem] text-[#242222]">
+        <p className="font-medium text-[2rem] md:text-[3rem] leading-[3rem] text-[#242222]">
           Since her planet's resources are limitless, Minerva has no need for
         </p>
         <div
           id="drop-zone"
           className={`${isCorrectAnswer
-              ? "border-[#34C759] text-[#34C759]"
-              : "border-[#9c2d9c] text-[#242222]"
+            ? "border-[#34C759] text-[#34C759]"
+            : "border-[#9c2d9c] text-[#242222]"
             } w-[19.5rem] h-[5rem]  p-2 font-medium text-[2.5rem] leading-[3rem] rounded-sm border-[7px]  bg-[#9C2D9C14] flex items-center justify-center`}
           onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => {
@@ -288,7 +288,9 @@ const DragNDropCard: React.FC<{
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <CorrectBox onClick={onClick} />
+          <CorrectBox whyText="
+          Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning.
+          " onClick={onClick} />
         </motion.div>
       )}
       {isNotCorrectAnswer && (
@@ -297,16 +299,18 @@ const DragNDropCard: React.FC<{
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <IncorrectBox  />
+          <IncorrectBox whyText="
+          Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning.
+          "/>
         </motion.div>
       )}
       <div className="flex justify-end w-full mt-10 ">
         <button
           onClick={toggleModal}
-          className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+          className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
         >
           Chat with AI tutor
-         <svg
+          <svg
             width="36"
             height="44"
             viewBox="0 0 36 44"

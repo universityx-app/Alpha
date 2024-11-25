@@ -12,7 +12,7 @@ const CompletedCard: React.FC = () => {
         <img
           src={bot}
           alt=""
-          className="scale-x-[-1] w-[10rem] h-[12rem] md:w-[20rem] md:h-[24rem] object-cover"
+          className="scale-x-[-1] w-[10rem] h-[12rem] md:w-[15rem] md:h-[15rem] object-cover"
         />
         <p className="font-plus_jakarta font-extrabold text-3xl md:text-5xl text-center text-[#242222]">
           Lesson Completed
@@ -32,11 +32,11 @@ const CompletedCard: React.FC = () => {
                   fill="#9C2D9C"
                 />
               </svg>
-              <span className="font-plus_jakarta font-semibold text-3xl text-[#242222]">
+              <span className="font-plus_jakarta font-semibold text-2xl md:text-3xl text-[#242222]">
                 Streak
               </span>
             </div>
-            <span className="font-plus_jakarta font-extrabold text-[2rem] text-[#242222]">
+            <span className="font-plus_jakarta font-extrabold text-[1rem] md:text-[2rem] text-[#242222]">
               1
             </span>
           </div>
@@ -55,11 +55,11 @@ const CompletedCard: React.FC = () => {
                 />
               </svg>
 
-              <span className="font-plus_jakarta font-semibold text-3xl text-[#242222]">
+              <span className="font-plus_jakarta font-semibold text-2xl md:text-3xl text-[#242222]">
                 Time
               </span>
             </div>
-            <span className="font-plus_jakarta font-extrabold text-[2rem] text-[#242222]">
+            <span className="font-plus_jakarta font-extrabold text-[1rem] md:text-[2rem] text-[#242222]">
               1m 23s
             </span>
           </div>
@@ -78,11 +78,11 @@ const CompletedCard: React.FC = () => {
                 />
               </svg>
 
-              <span className="font-plus_jakarta font-semibold text-3xl text-[#242222]">
+              <span className="font-plus_jakarta font-semibold text-2xl md:text-3xl text-[#242222]">
                 Accuracy
               </span>
             </div>
-            <span className="font-plus_jakarta font-extrabold text-[2rem] text-[#242222]">
+            <span className="font-plus_jakarta font-extrabold text-[1rem] md:text-[2rem] text-[#242222]">
               100%
             </span>
           </div>
@@ -91,7 +91,7 @@ const CompletedCard: React.FC = () => {
         <div className="flex items-center justify-center w-full">
           <Link
             to={"/"}
-            className="bg-[#9c2d9c] rounded-[71px] font-plus_jakarta font-semibold text-2xl md:text-3xl text-white w-full md:w-[40%] min-h-[5.2rem] md:min-h-[6.2rem] flex items-center justify-center border-t border-l border-r-[5px] border-b-[5px] border-[#9c2d9c] hover:opacity-95 p-2.5"
+            className="bg-[#9c2d9c] rounded-[71px] font-plus_jakarta font-semibold text-2xl md:text-3xl text-white w-full md:w-[40%] min-h-[3rem] md:min-h-[4.4rem] flex items-center justify-center border-t border-l border-r-[5px] border-b-[5px] border-[#9c2d9c] hover:opacity-95 p-2.5"
           >
             Back to Dashboard
           </Link>

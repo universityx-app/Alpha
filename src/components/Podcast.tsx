@@ -14,18 +14,18 @@ const Podcast: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
         "Explore how individuals and businesses make decisions about resource allocation, the role of opportunity cost.",
         audioSrc: theAudio
     },
-    {
-      number: 2,
-      title: "Breaking Barriers",
-      description:
-        "Dive into the fascinating world of supply and demand, price elasticity, and how market forces influence our daily lives and purchasing behaviors.",
-    },
-    {
-      number: 3,
-      title: "Incentives and Innovation",
-      description:
-        "Uncover how incentives drive behavior, promote innovation, and shape the strategies of businesses in competitive markets.",
-    },
+    // {
+    //   number: 2,
+    //   title: "Breaking Barriers",
+    //   description:
+    //     "Dive into the fascinating world of supply and demand, price elasticity, and how market forces influence our daily lives and purchasing behaviors.",
+    // },
+    // {
+    //   number: 3,
+    //   title: "Incentives and Innovation",
+    //   description:
+    //     "Uncover how incentives drive behavior, promote innovation, and shape the strategies of businesses in competitive markets.",
+    // },
   ];
   return (
     <div className="space-y-5 px-5">
@@ -56,13 +56,13 @@ const Podcast: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
       <div className="flex flex-wrap gap-4  justify-between w-full mt-10">
         <button
           onClick={onClick}
-          className="shadow outline-none w-full md:w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
+          className="shadow outline-none w-full md:w-[17rem] h-[4rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
         >
           Continue
         </button>
         <button
           onClick={toggleModal}
-          className="outline-none shadow text-2xl font-semibold text-[#242222] w-full md:w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+          className="outline-none shadow text-2xl font-semibold text-[#242222] w-full md:w-[22rem] h-[4rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
         >
           Chat with AI tutor{" "}
           <svg
