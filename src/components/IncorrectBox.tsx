@@ -32,7 +32,7 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
 
 
-const IncorrectBox: React.FC<{ whyText: string }> = ({ whyText }) => {
+const IncorrectBox: React.FC<{ onClick: () => void, whyText: string }> = ({ onClick, whyText }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleButtonClick = () => {
@@ -41,6 +41,7 @@ const IncorrectBox: React.FC<{ whyText: string }> = ({ whyText }) => {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    onClick();
   };
 
 

@@ -173,7 +173,7 @@ const DragNDropCard: React.FC<{
 }> = ({ onClick, toggleModal }) => {
   const answer = "economist";
 
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean>();
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean>();  
   const [isNotCorrectAnswer, setIsNotCorrectAnswer] = useState<boolean>();
   const [availableOptions, setAvailableOptions] = useState(options);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -301,7 +301,9 @@ const DragNDropCard: React.FC<{
         >
           <IncorrectBox whyText="
           Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning.
-          "/>
+          "
+          onClick={onClick}
+          />
         </motion.div>
       )}
       <div className="flex justify-end w-full mt-10 ">
