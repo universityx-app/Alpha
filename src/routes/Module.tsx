@@ -34,7 +34,10 @@ const Module: React.FC = () => {
         style={{ boxShadow: "0px 6px 13.7px 0px #00000012" }}
         className="w-full fixed top-0 left-0 z-40 px-4 md:px-10 py-5 flex items-center justify-between bg-white max-h-[6.125rem]"
       >
-        <button onClick={() => navigate(-1)} className="outline-none text-4xl">
+        <button
+          onClick={() => navigate("/dashboard")}
+          className="outline-none text-4xl"
+        >
           <IoMdClose color="#242222" />
         </button>
         <div className="flex items-center gap-4 w-[90%] md:w-[45%]">

@@ -82,7 +82,7 @@ const Home: React.FC = () => {
           />
         </div>
 
-        <nav className="flex items-center justify-between md:gap-5 font-inter">
+        <nav className="flex gap-4 items-center justify-between md:gap-5 font-inter">
           <div className="md:flex items-center gap-5 hidden">
             <button className="text-[#242222] outline-none flex items-center gap-1 text-sm md:text-xl font-medium">
               For Teachers
@@ -96,14 +96,13 @@ const Home: React.FC = () => {
               Resources
               <IoIosArrowDown />
             </button>
-            <Link
-              to="/programs"
-              className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]"
-            >
-              Programs
-            </Link>
           </div>
-
+          <Link
+            to="/programs"
+            className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]"
+          >
+            Programs
+          </Link>
           <Link
             to="/signup"
             className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-3 md:px-10 py-2 md:py-4 rounded-full border border-transparent"
@@ -125,7 +124,7 @@ const Home: React.FC = () => {
           <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-8">
             <Link
               to="/programs"
-              className="bg-[#9C2D9C] text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap"
+              className="bg-[#9C2D9C]  text-center text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap"
             >
               Book a Demo
             </Link>{" "}

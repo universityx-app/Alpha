@@ -10,7 +10,7 @@ interface PatternProps {
 const Pattern2: React.FC<PatternProps> = ({ isActive, title, hex }) => {
   return (
     <div className="w-full flex justify-start relative -mt-8 lg:mt-0">
-      <div className="z-40 max-w-[184px] sm:max-w-[220px] lg:max-w-[250px] md:h-[182px] w-full flex flex-col items-center justify-center">
+      <div className="z-40 w-1/2  md:h-[182px] flex flex-col items-center justify-center">
         {isActive && (
           <img
             src={bot}
@@ -28,7 +28,7 @@ const Pattern2: React.FC<PatternProps> = ({ isActive, title, hex }) => {
           {title}
         </p>
       </div>
-      <div className="absolute h-[14rem] md:h-[21rem] -left-5 md:left-0 top-14 shrink-0 text-[#DDDFE3]">
+      {/* <div className="absolute h-[14rem] md:h-[21rem] -left-5 md:left-0 top-14 shrink-0 text-[#DDDFE3]">
         <svg
           viewBox="0 0 228 263"
           focusable="false"
@@ -43,64 +43,7 @@ const Pattern2: React.FC<PatternProps> = ({ isActive, title, hex }) => {
             fill="none"
           ></path>
         </svg>
-      </div>
-      <span className="absolute left-1/2 -translate-x-1/2 -bottom-24 md:-bottom-16">
-        <svg
-          width="115"
-          height="64"
-          viewBox="0 0 115 64"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_d_3448_8491)">
-            <path
-              d="M82.8485 3H32.2424L8 27.2424L32.2424 53H82.8485L107.697 27.2424L82.8485 3Z"
-              fill="#A4A4A4"
-            />
-            <path
-              d="M82.8485 3H32.2424L8 27.2424L32.2424 53H82.8485L107.697 27.2424L82.8485 3Z"
-              stroke="#A4A4A4"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_d_3448_8491"
-              x="0.804688"
-              y="0"
-              width="114.098"
-              height="64"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="4" />
-              <feGaussianBlur stdDeviation="3.25" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_3448_8491"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_dropShadow_3448_8491"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-      </span>
+      </div> */}
     </div>
   );
 };
