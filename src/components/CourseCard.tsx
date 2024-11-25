@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 interface CourseCardProp {
@@ -7,7 +7,7 @@ interface CourseCardProp {
     name: string;
     completed: number;
     uncompleted: number;
-
+    icon: ReactNode;
     image: string;
   };
   isGrid: boolean;
@@ -27,13 +27,18 @@ const CourseCard: React.FC<CourseCardProp> = ({ course, isGrid }) => {
           isGrid && "h-[60%] flex-wrap"
         }`}
       >
-        <img
-          src={course.image}
-          alt=""
-          className={` ${
-            !isGrid ? "w-9 h-9" : "w-full h-[7.8125rem]"
-          } object-contain md:object-cover `}
-        />
+        {isGrid ? (
+          <img
+            src={course.image}
+            alt=""
+            className={` ${
+              !isGrid ? "w-9 h-9" : "w-full h-[7.8125rem]"
+            } object-contain md:object-cover `}
+          />
+        ) : (
+          <span className="text-[#667085] text-3xl"> {course.icon}</span>
+        )}
+
         <p
           className={`${
             !isGrid

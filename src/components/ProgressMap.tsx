@@ -25,7 +25,7 @@ const ProgressMap: React.FC<ProgressMapProps> = ({
   const patterns = [Pattern1, Pattern2, Pattern3, Pattern4, Pattern5];
 
   return (
-    <div className="flex flex-col w-full lg:w-3/5 md:px-5">
+    <div className="flex flex-col w-full lg:w-3/5 md:px-5 ">
       {elements.map((element, index) => {
         const PatternComponent =
           index === 0

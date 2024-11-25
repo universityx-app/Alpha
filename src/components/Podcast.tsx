@@ -1,7 +1,10 @@
 import React from "react";
 import PodcastCard from "./PodcastCard";
 
-const Podcast: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const Podcast: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
+  onClick,
+  toggleModal,
+}) => {
   const podcastList = [
     {
       number: 1,
@@ -23,7 +26,7 @@ const Podcast: React.FC<{ onClick: () => void }> = ({ onClick }) => {
     },
   ];
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 px-5">
       <div className="flex items-center gap-2">
         <div className="w-[3rem] h-[3rem] rounded-full bg-[#9c2d9c] flex items-center justify-center">
           <svg
@@ -48,14 +51,17 @@ const Podcast: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           <PodcastCard key={item.number} {...item} />
         ))}
       </div>
-      <div className="flex justify-between w-full mt-10">
+      <div className="flex flex-wrap gap-4  justify-between w-full mt-10">
         <button
           onClick={onClick}
-          className="disabed:bg-black/80 w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-2xl font-semibold"
+          className="shadow outline-none w-full md:w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
         >
           Continue
         </button>
-        <button className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]">
+        <button
+          onClick={toggleModal}
+          className="outline-none shadow text-2xl font-semibold text-[#242222] w-full md:w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+        >
           Chat with AI tutor{" "}
           <svg
             width="36"

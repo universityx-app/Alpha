@@ -18,10 +18,10 @@ const VideoPlayer: React.FC = () => {
   };
 
   return (
-    <div className="relative w-[100%] mx-auto">
+    <div className="relative w-[100%] mx-auto min-h-[25rem]">
       <video
         ref={videoRef}
-        className="w-full rounded-lg"
+        className=" min-h-[25rem] object-cover w-full rounded-lg aspect-video"
         onClick={handlePlay}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}

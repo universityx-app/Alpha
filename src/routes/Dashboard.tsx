@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import bot from "../assets/images/bot.png";
-import { RiLayoutGridLine, RiTriangleFill } from "react-icons/ri";
+import { RiLayoutGridLine, RiStackLine, RiTriangleFill } from "react-icons/ri";
 import { MdFormatListBulleted } from "react-icons/md";
 import { useOutletContext } from "react-router-dom";
-import sec from "../assets/images/Wema_Bank_Plc.jpg";
+import sec from "../assets/images/learn3.jpg";
 import algebra from "../assets/images/sec5.png";
 import opt from "../assets/images/sec3.png";
 import CourseCard from "../components/CourseCard";
+import { CiDesktop } from "react-icons/ci";
+import { BiCalculator } from "react-icons/bi";
+import { PiWindowsLogo, PiAtom } from "react-icons/pi";
 
 const Dashboard: React.FC = () => {
   const [isGrid, setIsGrid] = useState(false);
@@ -39,30 +42,35 @@ const Dashboard: React.FC = () => {
       completed: 0,
       uncompleted: 11,
       image: sec,
+      icon: <CiDesktop />,
     },
     {
       name: "Enterpreneurship 1:Customer Recovery",
       completed: 0,
       uncompleted: 20,
       image: algebra,
+      icon: <PiWindowsLogo />,
     },
     {
       name: "Market 1:Fundamentals of Marketing",
       completed: 0,
       uncompleted: 20,
       image: opt,
+      icon: <RiStackLine />,
     },
     {
       name: "Finance 1: Time Value of Money",
       completed: 0,
       uncompleted: 20,
       image: sec,
+      icon: <BiCalculator />,
     },
     {
       name: "Power and Influence",
       completed: 0,
       uncompleted: 10,
       image: algebra,
+      icon: <PiAtom />,
     },
   ];
   const course_list = mock_courses.map((course, index) => (
@@ -103,7 +111,7 @@ const Dashboard: React.FC = () => {
     </div>
   ));
   return (
-    <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-5">
+    <div className="max-w-[100vw] overflow-x-clip w-full flex flex-col lg:flex-row items-start justify-between gap-5">
       <div className="lg:sticky top-0  w-full lg:w-1/2 flex flex-col items-center gap-y-5 md:gap-y-10">
         <div
           style={{ boxShadow: "0px 1px 10.4px 0px #0000000F" }}

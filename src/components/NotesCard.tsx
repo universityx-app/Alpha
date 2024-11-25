@@ -1,10 +1,13 @@
 import React from "react";
 import note_img from "../assets/images/note_img.jpg";
 
-const NotesCard: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const NotesCard: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
+  onClick,
+  toggleModal,
+}) => {
   return (
-    <div className="space-y-5">
-      <div className="flex items-center gap-2">
+    <div className="space-y-5 px-5">
+      <div className="flex items-center gap-2 ">
         <div className="w-[3rem] h-[3rem] rounded-full bg-[#B71111] flex items-center justify-center">
           <svg
             width="22"
@@ -23,24 +26,27 @@ const NotesCard: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           Notes
         </span>
       </div>
-      <div className="flex flex-col justify-between items-center gap-10 pb-10 px-10">
-        <div className="w-[50%] h-[35.4rem] rounded-[14px] border-[7px] border-[#242222]">
+      <div className="flex flex-col justify-between items-center gap-10 pb-10 md:px-10">
+        <div className="w-full h-[25rem] md:w-[50%] md:h-[35.4rem] rounded-[14px] border-[7px] border-[#242222]">
           <img src={note_img} alt="" className="w-full h-full object-cover" />
         </div>
-        <p className="w-[90%] font-medium text-[2.5rem] leading-[4rem] text-[#242222]">
+        <p className="w-full md:w-[90%] font-medium text-2xl md:text-[2.5rem] md:leading-[4rem] text-[#242222]">
           Minerva is lucky. She rules a planet with infinite resources, yielding
           an endless supply of everything she and her minions could possibly
           want.
         </p>
       </div>
-      <div className="flex justify-between w-full mt-10">
+      <div className="flex flex-wrap gap-4  justify-between w-full mt-10">
         <button
           onClick={onClick}
-          className="disabed:bg-black/80 w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-2xl font-semibold"
+          className="shadow outline-none w-full md:w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
         >
           Continue
         </button>
-        <button className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]">
+        <button
+          onClick={toggleModal}
+          className="outline-none shadow text-2xl font-semibold text-[#242222] w-full md:w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+        >
           Chat with AI tutor{" "}
           <svg
             width="36"

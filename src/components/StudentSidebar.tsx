@@ -6,7 +6,7 @@ import { RxHome } from "react-icons/rx";
 import { TiWorldOutline } from "react-icons/ti";
 import { PiMailbox, PiToolbox } from "react-icons/pi";
 import { GrGroup } from "react-icons/gr";
-import { IoChatbubblesOutline } from "react-icons/io5";
+import { IoChatbubblesOutline, IoClose } from "react-icons/io5";
 import { FiAlertCircle } from "react-icons/fi";
 
 interface SideBarProps {
@@ -30,9 +30,9 @@ const StudentSideBar: React.FC<SideBarProps> = ({
         collapseNav
           ? "max-w-2/3 md:max-w-[18.565rem] opacity-100 left-0"
           : "-left-[100%] lg:left-0 max-w-[8.5rem] "
-      } z-50 fixed w-full h-screen top-0 bg-white flex flex-col items-center gap-y-4 md:gap-y-8 py-7 border-r border-[#66708538] transition-all duration-300`}
+      } z-50 fixed w-full h-screen top-0 bg-white flex flex-col md:items-center gap-y-4 md:gap-y-8 py-7 border-r border-[#66708538] transition-all duration-300`}
     >
-      <div className=" flex items-center gap-3">
+      <div className=" relative flex items-center gap-3 px-7">
         <img
           src={icon}
           alt="Logo"
@@ -47,6 +47,9 @@ const StudentSideBar: React.FC<SideBarProps> = ({
         >
           UniversityX
         </span>
+        <button onClick={onClick} className="absolute right-7 lg:hidden">
+          <IoClose color="#242222" size={32} />
+        </button>
       </div>
       <nav className=" flex flex-col gap-2">
         <Link
@@ -171,7 +174,7 @@ const StudentSideBar: React.FC<SideBarProps> = ({
       </nav>
       <button
         onClick={onClick}
-        className={`absolute bottom-5 ${collapseNav && "rotate-180"}`}
+        className={`absolute bottom-5 right-7 ${collapseNav && "rotate-180"}`}
       >
         <svg
           width="36"

@@ -1,33 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsGlobe } from "react-icons/bs";
 import { FiFeather } from "react-icons/fi";
 import { TbCube } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import ProgressMap from "../components/ProgressMap";
-import hex from "../assets/images/completeHex.svg";
+// import ProgressMap from "../components/ProgressMap";
+// import hex from "../assets/images/completeHex.svg";
 import incompleteHex from "../assets/images/incompleteHex.svg";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import lessonBg from "../assets/images/lessonBg.jpg";
 import { IoIosArrowBack } from "react-icons/io";
+import Pattern1 from "../components/Pattern1";
+import Pattern2 from "../components/Pattern2";
 
 const Course: React.FC = () => {
   const { course_id: course_name } = useParams();
   const [searchParams] = useSearchParams();
   const lessons = searchParams.get("q");
-  const [isActive] = useState("");
+  // const [isActive] = useState("");
   const navigate = useNavigate();
-  const elements = [
-    { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
-    { id: "5", title: "Utility and Elasticity", completed: false },
-    //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
-    //   { id: "5", title: "Utility and Elasticity", completed: false },
-    //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
-    //   { id: "5", title: "Utility and Elasticity", completed: false },
-    //   { id: "5", title: "Utility and Elasticity", completed: false },
-    //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
-    //   { id: "5", title: "Utility and Elasticity", completed: false },
-  ];
+  // const elements = [
+  //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
+  //   { id: "5", title: "Utility and Elasticity", completed: false },
+  //   //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
+  //   //   { id: "5", title: "Utility and Elasticity", completed: false },
+  //   //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
+  //   //   { id: "5", title: "Utility and Elasticity", completed: false },
+  //   //   { id: "5", title: "Utility and Elasticity", completed: false },
+  //   //   { id: "4", title: "Fundamentals of Supply and Demand", completed: false },
+  //   //   { id: "5", title: "Utility and Elasticity", completed: false },
+  // ];
   const lessons_list = [
     { title: "What is Microeconomics", id: 1 },
     { title: "The Demand Curve", id: 2 },
@@ -46,9 +48,6 @@ const Course: React.FC = () => {
       >
         <div className="flex items-center justify-between">
           <BsGlobe size={60} color="#667085" />
-          <Link to="" className="font-medium text-2xl text-[#9c2d9c] underline">
-            See all
-          </Link>
         </div>
         <p className="font-semibold text-4xl text-[#242222]">
           {/* Microeconomics Demand */}
@@ -78,13 +77,87 @@ const Course: React.FC = () => {
         </div>
       </div>
       {!lessons ? (
-        <ProgressMap
-          activeElement={isActive}
-          hex={hex}
-          incompleteHex={incompleteHex}
-          elements={elements}
-        />
+        <div className="flex flex-col w-full lg:w-3/5 md:px-5 ">
+          <Pattern1
+            hex={incompleteHex}
+            title="Fundamentals of Supply and Demand"
+            isActive={true}
+          />
+
+          <Pattern2
+            hex={incompleteHex}
+            title="Fundamentals of Supply and Demand"
+            isActive={false}
+          />
+          <div className="flex items-center justify-center">
+            <svg
+              width="115"
+              height="64"
+              viewBox="0 0 115 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_3448_8491)">
+                <path
+                  d="M82.8485 3H32.2424L8 27.2424L32.2424 53H82.8485L107.697 27.2424L82.8485 3Z"
+                  fill="#A4A4A4"
+                />
+                <path
+                  d="M82.8485 3H32.2424L8 27.2424L32.2424 53H82.8485L107.697 27.2424L82.8485 3Z"
+                  stroke="#A4A4A4"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_3448_8491"
+                  x="0.804688"
+                  y="0"
+                  width="114.098"
+                  height="64"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="3.25" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_3448_8491"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_3448_8491"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
       ) : (
+        // <ProgressMap
+        //   activeElement={isActive}
+        //   hex={hex}
+        //   incompleteHex={incompleteHex}
+        //   elements={elements}
+        // />
+        //         <div>
+
+        //         </div>
+
         <div className="w-full lg:w-1/2 max-w-[45rem] bg-white border border-[#66708538]">
           <div className="w-full h-[11.25rem] relative">
             <img src={lessonBg} alt="" className="w-full h-full object-cover" />
@@ -100,7 +173,7 @@ const Course: React.FC = () => {
               <h2 className="font-plus_jakarta font-semibold text-center text-[#242222] text-[2rem] leading-10">
                 Fundamentals of Supply and Demand
               </h2>
-              <p className="p-2 font-plus_jakarta font-medium text-[22px] leading-7 text-[#667085]">
+              <p className=" font-plus_jakarta font-medium text-[22px] leading-7 text-[#667085]">
                 {" "}
                 Examine foundational aspects of microeconomics such as supply
                 and demand & explore how market determine prices

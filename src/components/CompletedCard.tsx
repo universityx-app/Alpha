@@ -7,14 +7,18 @@ const CompletedCard: React.FC = () => {
     <div className="w-full h-screen bg-white flex items-center justify-center">
       <div
         style={{ boxShadow: "-10px 11px 40.4px 0px #66708538" }}
-        className="w-[90%] md:w-[70%] h-[90%] overflow-y-auto hide_scrollbar flex flex-col items-center gap-10 bg-white rounded-[22px] border border-[#66708538] px-2.5 py-10"
+        className="w-[90%] md:w-[70%] h-[90%] overflow-y-auto hide_scrollbar flex flex-col items-center gap-5 lg:gap-10 bg-white rounded-[22px] border border-[#66708538] px-2.5 py-10"
       >
-        <img src={bot} alt="" className="scale-x-[-1]" />
-        <p className="font-plus_jakarta font-extrabold text-5xl text-center text-[#242222]">
+        <img
+          src={bot}
+          alt=""
+          className="scale-x-[-1] w-[10rem] h-[12rem] md:w-[20rem] md:h-[24rem] object-cover"
+        />
+        <p className="font-plus_jakarta font-extrabold text-3xl md:text-5xl text-center text-[#242222]">
           Lesson Completed
         </p>
-        <div className="w-[70%] space-y-5">
-          <div className=" flex items-center justify-between bg-white p-8 rounded-[14px] border-x-2 border-t border-b-[6px] border-[#E8E8E8]">
+        <div className="w-full md:w-[70%] space-y-5">
+          <div className=" flex items-center justify-between bg-white p-4 md:p-8 rounded-[14px] border-x-2 border-t border-b-[6px] border-[#E8E8E8]">
             <div className="flex items-center gap-3">
               <svg
                 width="36"
@@ -36,7 +40,7 @@ const CompletedCard: React.FC = () => {
               1
             </span>
           </div>
-          <div className=" flex items-center justify-between bg-white p-8 rounded-[14px] border-x-2 border-t border-b-[6px] border-[#E8E8E8]">
+          <div className=" flex items-center justify-between bg-white p-4 md:p-8 rounded-[14px] border-x-2 border-t border-b-[6px] border-[#E8E8E8]">
             <div className="flex items-center gap-3">
               <svg
                 width="44"
@@ -59,7 +63,7 @@ const CompletedCard: React.FC = () => {
               1m 23s
             </span>
           </div>
-          <div className=" flex items-center justify-between bg-white p-8 rounded-[14px] border-x-2 border-t border-b-[6px] border-[#E8E8E8]">
+          <div className=" flex items-center justify-between bg-white p-4 md:p-8 rounded-[14px] border-x-2 border-t border-b-[6px] border-[#E8E8E8]">
             <div className="flex items-center gap-3">
               <svg
                 width="34"
@@ -87,7 +91,7 @@ const CompletedCard: React.FC = () => {
         <div className="flex items-center justify-center w-full">
           <Link
             to={"/"}
-            className="bg-[#9c2d9c] rounded-[71px] font-plus_jakarta font-semibold text-3xl text-white w-[40%] min-h-[6.2rem] flex items-center justify-center border-t border-l border-r-[5px] border-b-[5px] border-[#9c2d9c] hover:opacity-95 p-2.5"
+            className="bg-[#9c2d9c] rounded-[71px] font-plus_jakarta font-semibold text-2xl md:text-3xl text-white w-full md:w-[40%] min-h-[5.2rem] md:min-h-[6.2rem] flex items-center justify-center border-t border-l border-r-[5px] border-b-[5px] border-[#9c2d9c] hover:opacity-95 p-2.5"
           >
             Back to Dashboard
           </Link>
