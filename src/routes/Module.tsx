@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { HiSpeakerWave } from "react-icons/hi2";
+// import { HiSpeakerWave } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import AiGeneratedVideo from "../components/AiGeneratedVideo";
