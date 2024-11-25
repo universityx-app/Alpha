@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.svg";
 // import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { BsQuestionCircle } from "react-icons/bs";
+
 // , BsSend, BsEnvelope
 // import { CiCalendar } from "react-icons/ci";
 // import bg1 from "../assets/images/bg!.png";
@@ -111,13 +111,12 @@ const Home: React.FC = () => {
           >
             Programs
           </Link>
-          <Link
-            // to="/signup"
-            to="/dashboard"
-            className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-3 md:px-10 py-2 md:py-3 rounded-full border border-transparent"
+          <button
+            onClick={() => scrollToPoint("faq")}
+            className="outline-none flex items-center gap-1 text-lg font-medium text-[#242222]"
           >
-            Try Demo Now
-          </Link>
+            FAQ
+          </button>
         </nav>
       </header>
       <div className="mt-20 px-5">
@@ -131,18 +130,19 @@ const Home: React.FC = () => {
             experiences that drive real results.
           </p>
           <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-8">
-            <button
-              onClick={() => scrollToPoint("demo_form")}
-              className="bg-[#9C2D9C]  text-center text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap"
-            >
-              Book a Demo
-            </button>{" "}
-            <button
-              onClick={() => scrollToPoint("faq")}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSefrE0SJ71gkQ3Ogga8SY7xvuVQ-XPk_Q91OwF6mSnKYsW_rg/viewform?usp=sf_link"
+              target="_blank" // onClick={() => scrollToPoint("demo_form")}
               className="flex items-center justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full"
             >
-              <BsQuestionCircle /> Frequently Asked Question
-            </button>{" "}
+              Book a Demo
+            </a>{" "}
+            <Link
+              to="/dashboard"
+              className="flex items-center justify-center w-full py-5 bg-[#9C2D9C] text-white font-semibold font-inter text-xl px-3 md:px-10 rounded-full border border-transparent"
+            >
+              Try Demo Now
+            </Link>
           </div>
         </div>
 
