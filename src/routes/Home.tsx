@@ -139,7 +139,7 @@ const Home: React.FC = () => {
             </a>{" "}
             <Link
               to="/dashboard"
-              className="flex whitespace-nowrap items-center justify-center w-full py-5 bg-[#9C2D9C] text-white font-semibold font-inter text-xl px-3 md:px-10 rounded-full border border-transparent"
+              className="flex whitespace-nowrap min-w-[20rem] items-center justify-center w-full py-5 bg-[#9C2D9C] text-white font-semibold font-inter text-xl px-3 md:px-10 rounded-full border border-transparent"
             >
               Try Demo Now
             </Link>

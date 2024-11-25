@@ -63,14 +63,14 @@ const Course: React.FC = () => {
           <div className="flex items-center gap-2">
             <TbCube size={28} color="#667085" />
             <span className="font-medium text-lg text-[#667085]">
-              11 Modules
+              2 Modules
               {/* 6 Modules */}
             </span>
           </div>
           <div className="flex items-center gap-2">
             <FiFeather size={28} color="#667085" />
             <span className="font-medium text-lg text-[#667085]">
-              9 Quizzes
+              2 Quizzes
               {/* 10 Quizzes */}
             </span>
           </div>
@@ -86,7 +86,7 @@ const Course: React.FC = () => {
 
           <Pattern2
             hex={incompleteHex}
-            title="Fundamentals of Supply and Demand"
+            title="Utility and Elasticity"
             isActive={false}
           />
           <div className="flex items-center justify-center">

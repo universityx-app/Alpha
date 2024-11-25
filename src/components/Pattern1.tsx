@@ -18,7 +18,7 @@ const Pattern1: React.FC<PatternProps> = ({ title, hex }) => {
         <img
           src={bot}
           alt="bot"
-          className="scale-x-[-1] w-20 h-20 md:h-[115px] md:w-[110px] object-cover absolute -top-5 md:-top-[50%] sm:h-[130px] sm:w-[125px] lg:h-[150px] lg:w-[140px]"
+          className="scale-x-[-1] w-20 h-20 md:h-[115px] md:w-[110px] object-cover absolute -top-12 md:-top-[55%] sm:h-[130px] sm:w-[125px] lg:h-[150px] lg:w-[140px]"
         />
 
         <img
