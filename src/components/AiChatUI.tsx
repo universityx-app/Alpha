@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from "react";
 import { MdClose } from "react-icons/md";
 import { TbSend2 } from "react-icons/tb";
 import bot from "../assets/images/bot.png"; // Bot image imported
+// import Bottleneck from "bottleneck";
 
 // Define TypeScript interfaces
 interface Message {
@@ -61,6 +62,11 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
         content: userMessage.message
       });
 
+      // const limit = new Bottleneck({
+      //   maxConcurrent: 1,
+      //   minTime: 12000,
+      // });
+
       const response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: 'POST',
         headers: {
@@ -74,6 +80,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
           max_tokens: 800,
         }),
       });
+      
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
@@ -84,7 +91,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       }
 
       const data = await response.json();
-
+    
       const botMessage: Message = {
         sender: "bot",
         time: Date.now(),
@@ -106,6 +113,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div
