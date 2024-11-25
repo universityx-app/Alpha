@@ -7,8 +7,9 @@ import { BsQuestionCircle } from "react-icons/bs";
 // import { CiCalendar } from "react-icons/ci";
 // import bg1 from "../assets/images/bg!.png";
 import generateLesson from "../assets/images/generateLesson.png";
+import replacement from '../assets/images/replacement.png';
 import aiChat from "../assets/images/AIChat.png";
-import courseAction from "../assets/images/CourseAction.png";
+// import courseAction from "../assets/images/CourseAction.png";
 // import bg2 from "../assets/images/bg2.png";
 // import bg3 from "../assets/images/bg3.png";
 import sec1 from "../assets/images/main1.png";
@@ -161,7 +162,7 @@ const Home: React.FC = () => {
         <div className="z-30 px-5 flex justify-center">
           <img
             // src={bg1}
-            src={courseAction}
+            src={replacement}
             width={1000}
             height={800}
             className="rounded-2xl w-full h-[14rem] md:h-full md:w-[80%]"

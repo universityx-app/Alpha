@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import cofertti from "../assets/images/confertti.svg";
 
+
+interface PopupProps {
+  show: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
+
+const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
+      <div className="bg-white p-6 rounded-lg shadow-lg" onClick={(e) => e.stopPropagation()}>
+        {children}
+        <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded" onClick={onClose}>
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
+
+
+
 const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+  
   return (
     <div className="flex flex-col gap-y-5 md:flex-row items-center justify-between w-full py-5 px-6 rounded-b-[30px] bg-[#EAFAEF]">
       <div className="md:w-1/3 flex items-center justify-between">
@@ -28,16 +65,21 @@ const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
         </div>
       </div>
       <div className=" flex items-center gap-6">
-        <button className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#DDEDE2] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
+        <button
+          onClick={handleButtonClick}
+          className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#DDEDE2] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
           Why
         </button>
-        <button
+        {/* <button
           onClick={onClick}
           className="md:w-[13.25rem] md:h-[4.75rem] px-8 rounded-[71px] p-2.5 bg-[#30D25B] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#fff]"
         >
           Continue
-        </button>
+        </button> */}
       </div>
+      <Popup show={showPopup} onClose={handleClosePopup}>
+        <p>This is a centered popup!</p>
+      </Popup>
     </div>
   );
 };
