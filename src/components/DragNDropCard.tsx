@@ -298,7 +298,7 @@ const DragNDropCard: React.FC<{
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <IncorrectBox whyText="Minerva doesn't need an economist because her planet has endless resources" />
+          <IncorrectBox whyText="Minerva doesn't need an economist because her planet has endless resources" onClick={onClick} />
         </motion.div>
       )}
       <div className="flex justify-end w-full mt-10 ">
