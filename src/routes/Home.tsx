@@ -61,40 +61,16 @@ const Home: React.FC = () => {
       answer:
         "Yes! By uploading your learning materials to UniversityX, you can convert them into various formats such as audio, video, podcasts, quizzes, flashcards, and interactive learning modules. This allows you to personalize the learning experience based on your interests and preferred learning method.",
     },
-    {
-      question: " What types of content can I create with UniversityX?",
-      answer:
-        "UniversityX allows you to create a variety of content, including videos, audio lessons, quizzes, flashcards, and interactive modules, giving you the flexibility to engage learners in multiple ways.",
-    },
-    {
-      question: "Can UniversityX personalize my learning experience?",
-      answer:
-        "Yes! UniversityX offers personalized learning paths, adaptive assessments, and the ability to convert your materials into formats that suit your learning preferences, whether that's visual, auditory, or interactive.",
-    },
-    {
-      question: "Is UniversityX suitable for all types of learners?",
-      answer:
-        "Absolutely! Whether you're a visual learner, auditory learner, or prefer interactive content, UniversityX allows you to tailor the learning experience to suit any style.",
-    },
-    {
-      question: "Does UniversityX offer reporting tools for tracking progress?",
-      answer:
-        "Yes! UniversityX provides detailed insights and reports on learner progress, helping you track completion rates, engagement, and performance.",
-    },
-    {
-      question: "Can I collaborate with others on UniversityX?",
-      answer:
-        "Yes! UniversityX fosters community learning, allowing learners and educators to collaborate, share insights, and engage in peer-supported learning.",
-    },
-    {
-      question: "How does UniversityX help me as a lecturer?",
-      answer:
-        "UniversityX makes teaching easier by providing tools to create customized courses, track student progress, and engage learners with interactive content. With AI-powered course creation, real-time feedback, and valuable data insights, you can enhance the learning experience and focus on teaching while the platform handles the heavy lifting.",
-    },
   ];
   const faq_list = faq.map((item, index) => (
     <Collapsible key={index} question={item.question} answer={item.answer} />
   ));
+  const scrollToFaq = () => {
+    const faqElement = document.getElementById("faq");
+    if (faqElement) {
+      faqElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="bg-white ">
       <header className="md:px-16 px-5 pt-10 flex items-center justify-between">
@@ -105,29 +81,27 @@ const Home: React.FC = () => {
             alt="UniversityX"
           />
         </div>
-        {/* <div className="md:hidden w-16 h-16">
-          <img
-            src={icon}
-            alt="Logo"
-            width={100}
-            height={100}
-            className="w-full h-full object-contain "
-          />
-        </div> */}
+
         <nav className="flex items-center justify-between md:gap-5 font-inter">
           <div className="md:flex items-center gap-5 hidden">
-            <button className="outline-none flex items-center gap-1 text-sm md:text-xl font-medium">
+            <button className="text-[#242222] outline-none flex items-center gap-1 text-sm md:text-xl font-medium">
               For Teachers
               <IoIosArrowDown />
             </button>
-            <button className="outline-none flex items-center gap-1 text-xl font-medium">
+            <button className="text-[#242222] outline-none flex items-center gap-1 text-xl font-medium">
               For Schools
               <IoIosArrowDown />
             </button>
-            <button className="outline-none flex items-center gap-1 text-xl font-medium">
+            <button className="text-[#242222] outline-none flex items-center gap-1 text-xl font-medium">
               Resources
               <IoIosArrowDown />
             </button>
+            <Link
+              to="/programs"
+              className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]"
+            >
+              Programs
+            </Link>
           </div>
 
           <Link
@@ -149,10 +123,16 @@ const Home: React.FC = () => {
             experiences that drive real results.
           </p>
           <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-8">
-            <button className="bg-[#9C2D9C] text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap">
+            <Link
+              to="/programs"
+              className="bg-[#9C2D9C] text-white font-semibold w-full font-inter text-xl px-5 md:px-10 py-4 md:py-5 rounded-full whitespace-nowrap"
+            >
               Book a Demo
-            </button>{" "}
-            <button className="flex items-center justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full">
+            </Link>{" "}
+            <button
+              onClick={scrollToFaq}
+              className="flex items-center justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full"
+            >
               <BsQuestionCircle /> Frequently Asked Question
             </button>{" "}
           </div>
@@ -360,7 +340,10 @@ const Home: React.FC = () => {
 
       <Scroll />
       {/* <ReviewScroll /> */}
-      <div className="mt-5 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center">
+      <div
+        id="faq"
+        className="mt-5 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center"
+      >
         <p className="text-center text-4xl md:text-5xl font-semibold text-[#242222]">
           Frequently Asked Questions
         </p>
@@ -415,8 +398,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div> */}
-      <footer className="w-full min-h-[20rem] bg-black md:border-x-[12px] md:border-t-[12px] border-gray-700 mt-10 md:mt-20 px-5 pt-5 md:px-20 md:pt-20 space-y-10">
-        <div className="flex flex-wrap items-center justify-between gap-y-5">
+      <footer className="w-full min-h-[5rem] bg-black md:border-x-[12px] md:border-t-[12px] border-gray-700 mt-10 md:mt-20 px-5 pt-5 md:px-20 md:pt-20 space-y-10">
+        {/* <div className="flex flex-wrap items-center justify-between gap-y-5">
           <div className="w-full lg:w-3/5 flex flex-wrap items-start justify-between gap-y-6">
             <div className="text-white space-y-2 md:space-y-4">
               <p className=" text-xl font-semibold text-white">Platform</p>
@@ -496,8 +479,8 @@ const Home: React.FC = () => {
               grow your business, The more you know the faster you grow
             </p>
           </div>
-        </div>
-        <div className="border-t border-[#F5F5F5] py-5 flex items-center justify-between">
+        </div> */}
+        <div className="border- border-[#F5F5F5] py-5 flex items-center justify-between">
           <svg
             width="170"
             height="48"

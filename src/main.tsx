@@ -9,11 +9,16 @@ import Dashboard from "./routes/Dashboard.tsx";
 import Course from "./routes/Course.tsx";
 import Module from "./routes/Module.tsx";
 import CompletedCard from "./components/CompletedCard.tsx";
+import Programs from "./routes/Programs.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/programs",
+    element: <Programs />,
   },
   {
     path: "/dashboard",

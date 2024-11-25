@@ -3,7 +3,7 @@ import StudentSidebar from "../components/StudentSidebar";
 import { useLocation } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { PiBellSimple } from "react-icons/pi";
-import bot from "../assets/images/bot.png";
+// import bot from "../assets/images/bot.png";
 import { Outlet } from "react-router-dom";
 import profile from "../assets/images/oluwatobi-fasipe-e8etaVo85AY-unsplash.jpg";
 import { CiMenuFries, CiSearch } from "react-icons/ci";
@@ -12,7 +12,7 @@ const Layout: React.FC = () => {
   const location = useLocation();
   const [collapseNav, setCollapseNav] = useState(false);
 
-  const firstName = "Jennifer";
+  const firstName = "there";
 
   return (
     <div>
@@ -30,13 +30,13 @@ const Layout: React.FC = () => {
           } w-full z-40 transition-all duration-300 fixed shadow shadow-gray-100 to-0 right-0 bg-white py-3 h-[6.5rem] border-b border-l border-[#66708538] flex items-center justify-between gap-x-5 gap-y-5 lg:px-10 px-3 `}
         >
           <div className="flex items-center gap-2 w-2/3 lg:w-1/3">
-            <div className="relative overflow-hidden w-[59px] h-[2.5rem] overflow-y-clip hidden md:flex items-start">
+            {/* <div className="relative overflow-hidden w-[59px] h-[2.5rem] overflow-y-clip hidden md:flex items-start">
               <img
                 src={bot}
                 alt=""
                 className="w-[5.75rem] h-[4.5rem] object-contain scale-x-[-1] p-1 absolute top-1"
               />
-            </div>
+            </div> */}
             <div className="w-[4rem] h-[2.5rem] rounded-full md:hidden">
               <img
                 src={profile}
@@ -45,9 +45,9 @@ const Layout: React.FC = () => {
               />
             </div>
 
-            <span className="font-medium text-lg md:text-2xl text-black md:whitespace-nowrap">
+            {/* <span className="font-medium text-lg md:text-2xl text-black md:whitespace-nowrap">
               {`Hi ${firstName}, nice to see you again`}
-            </span>
+            </span> */}
           </div>
 
           <div className=" hidden w-1/2 max-w-[43rem] h-[3.875rem] rounded-full bg-[#F3F3F6] py-[5px] px-2.5 lg:flex items-center ">

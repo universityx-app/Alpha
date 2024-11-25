@@ -46,9 +46,6 @@ const Course: React.FC = () => {
       >
         <div className="flex items-center justify-between">
           <BsGlobe size={60} color="#667085" />
-          <Link to="" className="font-medium text-2xl text-[#9c2d9c] underline">
-            See all
-          </Link>
         </div>
         <p className="font-semibold text-4xl text-[#242222]">
           {/* Microeconomics Demand */}
@@ -85,6 +82,24 @@ const Course: React.FC = () => {
           elements={elements}
         />
       ) : (
+        //         <div>
+        //  <span className="max-w-full">
+        //           <svg
+        //             width="481"
+        //             height="611"
+        //             viewBox="0 0 481 611"
+        //             fill="none"
+        //             xmlns="http://www.w3.org/2000/svg"
+        //           >
+        //             <path
+        //               d="M434.215 93.6166L257.17 4.58872C256.46 4.23146 255.605 4.32906 254.994 4.83732L117.572 119.033C115.897 120.425 116.217 123.082 118.174 124.036L315.475 220.28C316.769 220.911 316.992 222.662 315.897 223.598L208.216 315.617L4.40569 485.789C3.34104 486.678 3.48236 488.354 4.68082 489.052L207.038 606.93C207.749 607.344 208.64 607.281 209.286 606.771L294.216 539.617L357.999 487.617L478.002 388.001"
+        //               stroke="#DDDFE3"
+        //               stroke-width="7"
+        //             />
+        //           </svg>
+        //         </span>
+        //         </div>
+
         <div className="w-full lg:w-1/2 max-w-[45rem] bg-white border border-[#66708538]">
           <div className="w-full h-[11.25rem] relative">
             <img src={lessonBg} alt="" className="w-full h-full object-cover" />

@@ -1,45 +1,46 @@
 import React from "react";
-// import hex from "../../../assets/images/completeHex.svg";
-// import incompleteHex from "../../../assets/images/incompleteHex.svg";
 import bot from "../assets/images/bot.png";
 import { Link } from "react-router-dom";
 
-const Pattern1: React.FC<PatternProps> = ({ title, isActive, hex }) => {
-  return (
-    <Link
-      to={`?q=lessons`}
-      className="w-full flex items-center justify-start relative mt-[10%]"
-    >
-      <div className="z-40 absolute left-1/2 -translate-x-1/2  max-w-[184px] h-[182px] w-full flex flex-col items-center justify-center">
-        {isActive && (
-          <img
-            src={bot}
-            alt=""
-            className="scale-x-[-1] h-[115px] w-[110px] object-cover absolute -top-10"
-          />
-        )}
+interface PatternProps {
+  title: string;
+  isActive: boolean;
+  hex: string;
+}
 
-        <img src={hex} alt="" className=" h-[50%] w-full object-contain" />
-        <p className=" max-w-[11.625rem] font-plus_jakarta font-medium text-[#242222] text-[22px] leading-7 text-center">
-          {" "}
+const Pattern1: React.FC<PatternProps> = ({ title, hex }) => {
+  return (
+    <div className="w-full flex items-center justify-center relative mt-10 sm:mt-16 ">
+      <Link
+        to={"?q-lessons"}
+        className="z-40   max-w-[184px] md:h-[182px] w-full flex flex-col items-center justify-center sm:max-w-[220px] lg:max-w-[250px]"
+      >
+        <img
+          src={bot}
+          alt="bot"
+          className="scale-x-[-1] w-20 h-20 md:h-[115px] md:w-[110px] object-cover absolute -top-5 md:-top-[50%] sm:h-[130px] sm:w-[125px] lg:h-[150px] lg:w-[140px]"
+        />
+
+        <img
+          src={hex}
+          alt="hex"
+          className="h-[50%] w-2/3 lg:w-full object-contain sm:h-[60%] lg:h-[70%]"
+        />
+        <p className="max-w-[9rem] leading-5 md:max-w-[11.625rem] font-plus_jakarta font-medium text-[#242222] md:text-[22px] md:leading-7 text-center sm:text-[24px] lg:text-[26px]">
           {title}
         </p>
-      </div>
-      <div className=" w-[100%] h-[14rem]  text-[#DDDFE3] ">
-        <svg
-          viewBox="-2 -2 454 160"
-          focusable="false"
-          className="w-full h-full relative"
-        >
+      </Link>
+      <div className="w-full absolute left-1/2 top-2 -translate-x-1/2 lg:h-[16rem] text-[#DDDFE3] flex justify-center items-center">
+        <svg viewBox="-2 -2 454 160" focusable="false" className="">
           <path
             d="M194.5 27L152.992 2.19083C151.76 1.45444 150.228 1.43462 148.978 2.13888L54.1875 55.5158C51.4715 57.0452 51.4709 60.9558 54.1865 62.486L167.882 126.553C170.583 128.074 170.601 131.957 167.914 133.504L124.5 158.5"
             stroke="currentColor"
-            stroke-width="4"
+            strokeWidth="4"
             fill="none"
           ></path>
         </svg>
       </div>
-    </Link>
+    </div>
   );
 };
 
