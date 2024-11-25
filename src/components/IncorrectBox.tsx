@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import cofertti from "../assets/images/confertti.svg";
 import xcircle from '../assets/icons/XCircle.svg';
+import { IoMdClose } from "react-icons/io";
 
 
 interface PopupProps {
@@ -16,11 +17,13 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
-      <div className="bg-white p-6 rounded-lg shadow-lg" onClick={(e) => e.stopPropagation()}>
-        {children}
-        <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded" onClick={onClose}>
-          Close
+      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[25rem]" onClick={(e) => e.stopPropagation()}>
+
+        <button className="outline-none text-4xl mb-2" onClick={onClose}>
+          <IoMdClose color="#242222" />
         </button>
+        {children}
+
       </div>
     </div>
   );

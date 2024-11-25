@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cofertti from "../assets/images/confertti.svg";
+import { IoMdClose } from "react-icons/io";
 
 
 interface PopupProps {
@@ -15,11 +16,13 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
-      <div className="bg-white p-6 rounded-lg shadow-lg" onClick={(e) => e.stopPropagation()}>
-        {children}
-        <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded" onClick={onClose}>
-          Close
+      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[25rem]" onClick={(e) => e.stopPropagation()}>
+
+        <button className="outline-none text-4xl mb-2" onClick={onClose}>
+          <IoMdClose color="#242222" />
         </button>
+        {children}
+
       </div>
     </div>
   );
@@ -38,7 +41,7 @@ const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const handleClosePopup = () => {
     setShowPopup(false);
   };
-  
+
   return (
     <div className="flex flex-col gap-y-5 md:flex-row items-center justify-between w-full py-5 px-6 rounded-b-[30px] bg-[#EAFAEF]">
       <div className="md:w-1/3 flex items-center justify-between">
@@ -77,8 +80,10 @@ const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           Continue
         </button>
       </div>
-      <Popup show={showPopup} onClose={handleClosePopup}>
-        <p>This is a centered popup!</p>
+      <Popup show={showPopup} onClose={handleClosePopup} >
+        <p>
+          Minerva doesn’t need an economist because her planet has endless resources. There’s nothing to manage or divide since everyone always gets whatever they want, so there’s no need for economic planning.
+        </p>
       </Popup>
     </div>
   );
