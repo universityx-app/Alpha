@@ -1,10 +1,8 @@
-import React, { FormEvent, useState, useEffect } from "react";
+import React, { FormEvent, useState, useEffect, useRef } from "react";
 import { MdClose } from "react-icons/md";
 import { TbSend2 } from "react-icons/tb";
 import bot from "../assets/images/bot.png";
 
-
-// TypeScript interfaces
 interface Message {
   sender: "bot" | "user";
   time: number;
@@ -16,7 +14,6 @@ interface AiChatUIProps {
   toggleModal: () => void;
 }
 
-// Type animation component
 const TypingAnimation = () => {
   return (
     <div className="flex space-x-2 p-2">
@@ -27,7 +24,6 @@ const TypingAnimation = () => {
   );
 };
 
-// Typing effect component
 const Typewriter = ({ text }: { text: string }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,6 +43,7 @@ const Typewriter = ({ text }: { text: string }) => {
 };
 
 const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot",
@@ -58,6 +55,15 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
 
   const [newMessage, setNewMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // Auto-scroll to bottom whenever messages change
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -201,6 +207,7 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} /> {/* Invisible element for scrolling */}
         </div>
 
         <form onSubmit={handleFormSubmit} className="relative">
