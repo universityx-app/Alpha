@@ -202,7 +202,7 @@ const DragNDropCard: React.FC<{
     }
   };
 
-  const handleTouchStart = (e: React.TouchEvent, value: string) => {
+  const handleTouchStart = (_e: React.TouchEvent, value: string) => {
     setDraggedItem(value);
   };
 
@@ -297,7 +297,7 @@ const DragNDropCard: React.FC<{
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <IncorrectBox onClick={onClick} />
+          <IncorrectBox  />
         </motion.div>
       )}
       <div className="flex justify-end w-full mt-10 ">

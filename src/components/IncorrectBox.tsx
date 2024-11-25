@@ -2,7 +2,7 @@ import React from "react";
 // import cofertti from "../assets/images/confertti.svg";
 import xcircle from '../assets/icons/XCircle.svg';
 
-const IncorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const IncorrectBox: React.FC = () => {
   return (
     <div className="flex flex-col gap-y-5 md:flex-row items-center justify-between w-full py-5 px-6 rounded-b-[30px] bg-[#FEF2F2]">
       <div className="md:w-1/3 flex items-center pl-3">

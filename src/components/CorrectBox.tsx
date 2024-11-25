@@ -70,12 +70,12 @@ const CorrectBox: React.FC<{ onClick: () => void }> = ({ onClick }) => {
           className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#DDEDE2] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
           Why
         </button>
-        {/* <button
+        <button
           onClick={onClick}
           className="md:w-[13.25rem] md:h-[4.75rem] px-8 rounded-[71px] p-2.5 bg-[#30D25B] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#fff]"
         >
           Continue
-        </button> */}
+        </button>
       </div>
       <Popup show={showPopup} onClose={handleClosePopup}>
         <p>This is a centered popup!</p>
