@@ -59,10 +59,11 @@ const Programs: React.FC = () => {
 
           <Link
             // to="/signup"
-            to="#"
+            to="/dashboard"
             className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-3 md:px-10 py-2 md:py-3 rounded-full border border-transparent"
           >
-            Sign Up
+            {/* Sign Up */}
+            Try Demo Now
           </Link>
         </nav>
       </header>
