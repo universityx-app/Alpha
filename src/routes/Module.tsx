@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { HiSpeakerWave } from "react-icons/hi2";
+// import { HiSpeakerWave } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import AiGeneratedVideo from "../components/AiGeneratedVideo";
@@ -50,10 +50,10 @@ const Module: React.FC = () => {
           </button>
         </div>
         <div className="hidden md:flex items-center gap-2">
-          <HiSpeakerWave color="#667085" size={28} />
+          {/* <HiSpeakerWave color="#667085" size={28} />
           <span className="font-inter font-bold text-xl text-[#242222]">
             Read Aloud
-          </span>
+          </span> */}
         </div>
       </div>
 

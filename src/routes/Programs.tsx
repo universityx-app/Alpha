@@ -1,5 +1,5 @@
 import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import miva from "../assets/images/mivamobile.png";
@@ -37,7 +37,7 @@ const Programs: React.FC = () => {
 
         <nav className="flex items-center justify-between md:gap-5 font-inter">
           <div className="md:flex items-center gap-5 hidden">
-            <button className="outline-none flex items-center gap-1 text-sm md:text-xl font-medium text-[#242222]">
+            {/* <button className="outline-none flex items-center gap-1 text-sm md:text-xl font-medium text-[#242222]">
               For Teachers
               <IoIosArrowDown />
             </button>
@@ -48,7 +48,7 @@ const Programs: React.FC = () => {
             <button className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]">
               Resources
               <IoIosArrowDown />
-            </button>
+            </button> */}
             <Link
               to="/programs"
               className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]"
@@ -59,10 +59,11 @@ const Programs: React.FC = () => {
 
           <Link
             // to="/signup"
-            to="#"
+            to="/dashboard"
             className="bg-[#9C2D9C] text-white font-semibold font-inter text-[0.8rem] md:text-xl px-3 md:px-10 py-2 md:py-3 rounded-full border border-transparent"
           >
-            Sign Up
+            {/* Sign Up */}
+            Try Demo Now
           </Link>
         </nav>
       </header>

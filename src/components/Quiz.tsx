@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import CorrectBox from "./CorrectBox";
+import IncorrectBox from "./IncorrectBox";
 
 const Quiz: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
   onClick,
@@ -69,22 +70,20 @@ const Quiz: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
               <div
                 key={option.id}
                 onClick={() => setSelectedAnswer(option.id)}
-                className={`${
-                  selectedAnswer == answer && selectedAnswer == option.id
+                className={`${selectedAnswer == answer && selectedAnswer == option.id
                     ? "bg-[#F0FDF4] border-[#30D258]"
                     : selectedAnswer !== answer && selectedAnswer == option.id
-                    ? "bg-red-100 border-red-500"
-                    : "bg-white border-[#66708538] hover:border-[#30D258]"
-                } flex items-center space-x-3 cursor-pointer w-full rounded-[14px] border-[3px]  md:py-5 p-3 md:px-6`}
+                      ? "bg-red-100 border-red-500"
+                      : "bg-white border-[#66708538] hover:border-[#30D258]"
+                  } flex items-center space-x-3 cursor-pointer w-full rounded-[14px] border-[3px]  md:py-5 p-3 md:px-6`}
               >
                 <div
-                  className={`${
-                    selectedAnswer == answer && selectedAnswer == option.id
+                  className={`${selectedAnswer == answer && selectedAnswer == option.id
                       ? "text-white bg-[#34C759]"
                       : selectedAnswer !== answer && selectedAnswer == option.id
-                      ? "text-white bg-red-500"
-                      : "text-[#242222] bg-[#F6F6F6]"
-                  } font-bold text-[2.5rem] w-[6rem] flex items-center justify-center rounded-[11px] p-2.5 `}
+                        ? "text-white bg-red-500"
+                        : "text-[#242222] bg-[#F6F6F6]"
+                    } font-bold text-[2.5rem] w-[6rem] flex items-center justify-center rounded-[11px] p-2.5 `}
                 >
                   {letter}
                 </div>
@@ -102,7 +101,20 @@ const Quiz: React.FC<{ onClick: () => void; toggleModal: () => void }> = ({
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <CorrectBox onClick={onClick} />
+          <CorrectBox whyText="
+          In microeconomics, opportunity cost is the value of the next best alternative forgone when making a choice. It represents the benefits you miss out on by choosing one option over another
+          " onClick={onClick} />
+        </motion.div>
+      )}
+      {selectedAnswer !== answer && (
+        <motion.div
+          initial={{ y: delta >= 0 ? "50%" : "-50%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <IncorrectBox whyText="
+          In microeconomics, opportunity cost is the value of the next best alternative forgone when making a choice. It represents the benefits you miss out on by choosing one option over another
+          "/>
         </motion.div>
       )}
       <div className="flex justify-end w-full mt-10 ">

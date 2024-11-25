@@ -27,16 +27,16 @@ const AiGeneratedVideo: React.FC<{
         </span>
       </div>
       <VideoPlayer />
-      <div className="flex flex-wrap gap-4 px-2  justify-between w-full mt-10">
+      <div className="flex flex-wrap gap-4 px-2 items-center justify-between w-full mt-10">
         <button
           onClick={onClick}
-          className="outline-none w-full md:w-[17rem] h-[4.75rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
+          className="outline-none w-full md:w-[17rem] h-[4rem] rounded-[71px] p-2.5 bg-[#242222] flex items-center justify-center text-white text-xl md:text-2xl font-semibold"
         >
           Continue
         </button>
         <button
           onClick={toggleModal}
-          className="text-2xl font-semibold text-[#242222] w-[22rem] h-[4.75rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
+          className="text-2xl font-semibold text-[#242222] w-full  md:w-[17rem] h-[4rem] rounded-[71px] p-2.5 flex items-center justify-center border border-[#66708538] bg-[#F3F3F6]"
         >
           Chat with AI tutor{" "}
           <svg

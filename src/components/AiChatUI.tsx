@@ -214,13 +214,13 @@ const AiChatUI: React.FC<AiChatUIProps> = ({ toggleModal }) => {
         </div>
 
         <form onSubmit={handleFormSubmit} className="relative">
-          <div className="flex items-center gap-2 w-full rounded-2xl border border-gray-200 bg-white p-4">
+          <div className="flex items-center gap-2 md:w-full rounded-2xl border border-gray-200 bg-white p-4">
             <input
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               placeholder="Message AI tutor..."
-              className="flex-1 outline-none bg-transparent text-gray-800 placeholder-gray-400"
+              className="flex-1 outline-none bg-transparent text-gray-800 placeholder-gray-400 "
               disabled={isLoading}
             />
             <button

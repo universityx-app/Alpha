@@ -17,7 +17,7 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
-      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[25rem]" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-[20rem] md:w-[25rem]" onClick={(e) => e.stopPropagation()}>
 
         <button className="outline-none text-4xl mb-2" onClick={onClose}>
           <IoMdClose color="#242222" />
@@ -32,7 +32,7 @@ const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
 
 
 
-const IncorrectBox: React.FC = () => {
+const IncorrectBox: React.FC<{ whyText: string }> = ({ whyText }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleButtonClick = () => {
@@ -72,22 +72,23 @@ const IncorrectBox: React.FC = () => {
       <div className=" flex items-center gap-6">
         <button
           onClick={handleButtonClick}
-          className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#667085] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
+          className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#667085] font-plus_jakarta font-semibold text-[26px] leading-8 text-white">
           Why
         </button>
-        <button
+        {/* <button
           //   onClick={onClick}
           // onClick={reload screen}
           className="md:w-[13.25rem] md:h-[4.75rem] px-8 rounded-[71px] p-2.5 bg-[#DC2626] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#fff]"
         >
           Retry
-        </button>
+        </button> */}
       </div>
       <Popup show={showPopup} onClose={handleClosePopup}>
         {/* <p>This is a centered popup!</p> */}
-        <p>
+        {/* <p>
           In microeconomics, opportunity cost is the value of the next best alternative forgone when making a choice. It represents the benefits you miss out on by choosing one option over another
-        </p>
+        </p> */}
+        <p>{whyText}</p>
       </Popup>
     </div>
   );
