@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 // import cofertti from "../assets/images/confertti.svg";
 import xcircle from '../assets/icons/XCircle.svg';
 
+
+interface PopupProps {
+  show: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
+
+const Popup: React.FC<PopupProps> = ({ show, onClose, children }) => {
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={onClose}>
+      <div className="bg-white p-6 rounded-lg shadow-lg" onClick={(e) => e.stopPropagation()}>
+        {children}
+        <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded" onClick={onClose}>
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
+
+
+
+
 const IncorrectBox: React.FC = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
+
   return (
     <div className="flex flex-col gap-y-5 md:flex-row items-center justify-between w-full py-5 px-6 rounded-b-[30px] bg-[#FEF2F2]">
       <div className="md:w-1/3 flex items-center pl-3">
@@ -29,17 +67,25 @@ const IncorrectBox: React.FC = () => {
         </div> */}
       </div>
       <div className=" flex items-center gap-6">
-        <button className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#667085] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
+        <button
+          onClick={handleButtonClick}
+          className="md:w-[13.25rem] md:h-[4.75rem] px-6 rounded-[71px] p-2.5 bg-[#667085] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#242222]">
           Why
         </button>
         <button
-        //   onClick={onClick}
-        // onClick={reload screen}
+          //   onClick={onClick}
+          // onClick={reload screen}
           className="md:w-[13.25rem] md:h-[4.75rem] px-8 rounded-[71px] p-2.5 bg-[#DC2626] font-plus_jakarta font-semibold text-[26px] leading-8 text-[#fff]"
         >
           Retry
         </button>
       </div>
+      <Popup show={showPopup} onClose={handleClosePopup}>
+        {/* <p>This is a centered popup!</p> */}
+        <p>
+          In microeconomics, opportunity cost is the value of the next best alternative forgone when making a choice. It represents the benefits you miss out on by choosing one option over another
+        </p>
+      </Popup>
     </div>
   );
 };
