@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import { IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { BsQuestionCircle } from "react-icons/bs";
 // , BsSend, BsEnvelope
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         </div>
 
         <nav className="flex gap-4 items-center justify-between md:gap-5 font-inter">
-          <div className="md:flex items-center gap-5 hidden">
+          {/* <div className="md:flex items-center gap-5 hidden">
             <button className="text-[#242222] outline-none flex items-center gap-1 text-sm md:text-xl font-medium">
               For Teachers
               <IoIosArrowDown />
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
               Resources
               <IoIosArrowDown />
             </button>
-          </div>
+          </div> */}
           <Link
             to="/programs"
             className="outline-none flex items-center gap-1 text-xl font-medium text-[#242222]"
