@@ -296,10 +296,10 @@ const Home: React.FC = () => {
 
           <div className="w-full md:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1a1a1a]">
-              Turn Simple Resources into Engaging Learning Journeys
+              Turn Simple Resources into Engaging Learning Journey
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              With UniversityX, lecturers and students can upload PDFs or share links, and our AI transforms them into complete, interactive learning paths. From AI-generated videos and podcasts to quizzes, flashcards, and engaging lessons, we make it effortless to create immersive educational experiences. It's not just innovative—it’s a game-changer for teaching and learning.
+              With UniversityX, lecturers and students can upload PDFs or share links, and our AI transforms them into complete, interactive learning paths. From AI-generated videos and podcasts to quizzes, flashcards, and engaging lessons, we make it effortless to create immersive educational experiences.
             </p>
           </div>
         </div>
