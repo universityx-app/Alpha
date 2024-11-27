@@ -16,7 +16,7 @@ import sec1 from "../assets/images/main11.png";
 import sec2 from "../assets/images/main22.png";
 import sec3 from "../assets/images/main33.png";
 import sec4 from "../assets/images/sec44.png";
-import sec5 from "../assets/images/sec5.png";
+// import sec5 from "../assets/images/sec5.png";
 import Scroll from "../components/admin/Scroll";
 // import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
@@ -282,7 +282,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-between lg:justify-around flex-wrap">
+        
+{/*         <div className="flex items-center justify-between lg:justify-around flex-wrap">
           <div className="w-full md:w-1/2">
             <img
               src={sec5}
@@ -305,7 +306,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+      
       <div className="mt-10 md:mt-20 w-full min-h-[22rem] bg-[#9C2C9C] flex flex-col gap-10 items-center py-10 px-5 md:px-16">
         <h3 className="font-medium font-inter text-2xl text-white text-center w-full md:w-[45%]">
           Our Innovation is Backed by Data from Top Education and Data Sources
