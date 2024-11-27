@@ -16,7 +16,7 @@ import sec1 from "../assets/images/main11.png";
 import sec2 from "../assets/images/main22.png";
 import sec3 from "../assets/images/main33.png";
 import sec4 from "../assets/images/sec44.png";
-// import sec5 from "../assets/images/sec5.png";
+import sec5 from "../assets/images/sec55.png";
 import Scroll from "../components/admin/Scroll";
 // import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
@@ -283,7 +283,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         
-{/*         <div className="flex items-center justify-between lg:justify-around flex-wrap">
+      <div className="flex items-center justify-between lg:justify-around flex-wrap">
           <div className="w-full md:w-1/2">
             <img
               src={sec5}
@@ -296,17 +296,14 @@ const Home: React.FC = () => {
 
           <div className="w-full md:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1a1a1a]">
-              Artificial Intelligence
+              Turn Simple Resources into Engaging Learning Journeys
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              From smart content creation to personalized learning pathways, AI
-              is the backbone of every experience. It empowers both instructors
-              and learners to work smarter – it transforms how you teach and how
-              students learn.
+              With UniversityX, lecturers and students can upload PDFs or share links, and our AI transforms them into complete, interactive learning paths. From AI-generated videos and podcasts to quizzes, flashcards, and engaging lessons, we make it effortless to create immersive educational experiences. It's not just innovative—it’s a game-changer for teaching and learning.
             </p>
           </div>
         </div>
-      </div> */}
+      </div> 
       
       <div className="mt-10 md:mt-20 w-full min-h-[22rem] bg-[#9C2C9C] flex flex-col gap-10 items-center py-10 px-5 md:px-16">
         <h3 className="font-medium font-inter text-2xl text-white text-center w-full md:w-[45%]">
