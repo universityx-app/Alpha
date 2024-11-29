@@ -377,7 +377,7 @@ const Home: React.FC = () => {
             <input
               type="text"
               id="name"
-              name="fullName"
+              name="full_name"
               className="w-full min-h-[5rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
               required
             />
