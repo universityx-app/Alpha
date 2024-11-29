@@ -9,14 +9,8 @@ import phonepart from "..//assets/images/fullphone.png";
 import learn2 from "../assets/images/learn2.jpg";
 import learn3 from "../assets/images/learn3.jpg";
 import dashboard from "../assets/images/dashboard.png";
-import { useNavigate } from "react-router-dom";
 
 const Programs: React.FC = () => {
-  const navigate = useNavigate();
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    navigate("/dashboard");
-  };
   const scrollToDemoForm = () => {
     const faqElement = document.getElementById("book_demo");
     if (faqElement) {
@@ -213,7 +207,7 @@ const Programs: React.FC = () => {
         <form
           name="try_demo_form"
           method="POST"
-          onSubmit={handleSubmit}
+          action="/dashboard"
           className="w-full flex flex-col gap-10"
           data-netlify="true"
         >

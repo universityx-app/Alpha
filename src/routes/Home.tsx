@@ -20,7 +20,6 @@ import sec5 from "../assets/images/sec55.png";
 import Scroll from "../components/admin/Scroll";
 // import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
-import { useNavigate } from "react-router-dom";
 // import icon from "../assets/icons/UniXIcon.png";
 import {
   AiFillInstagram,
@@ -31,7 +30,6 @@ import LogoScroll from "../components/LogoScroll";
 import { BsQuestionCircle } from "react-icons/bs";
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
   const faq = [
     {
       question: "How does UniversityX help me prepare for my exams",
@@ -69,10 +67,6 @@ const Home: React.FC = () => {
   const faq_list = faq.map((item, index) => (
     <Collapsible key={index} question={item.question} answer={item.answer} />
   ));
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    navigate("/dashboard");
-  };
 
   const scrollToPoint = (point: string) => {
     const faqElement = document.getElementById(point);
@@ -368,7 +362,7 @@ const Home: React.FC = () => {
         <form
           name="demo_form"
           method="POST"
-          onSubmit={handleSubmit}
+          action="/dashboard"
           className="w-full flex flex-col gap-10"
           data-netlify="true"
         >
