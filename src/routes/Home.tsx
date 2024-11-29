@@ -366,17 +366,6 @@ const Home: React.FC = () => {
         </div>
 
         <form
-          hidden
-          name="demo_form"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
-          <input type="text" name="fullname" />
-          <input type="text" name="school_name" />
-          <input type="email" name="email" />
-          <textarea name="interest"></textarea>
-        </form>
-        <form
           name="demo_form"
           method="POST"
           onSubmit={handleSubmit}

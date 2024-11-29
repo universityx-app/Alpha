@@ -209,25 +209,6 @@ const Programs: React.FC = () => {
             questions answered by one of our experts.
           </p>
         </div>
-        <form
-          hidden
-          name="try_demo_form"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
-          <input type="text" name="full_name" />
-
-          <input type="email" name="email" />
-          <select name="interest">
-            <option value={"miva open university"}>Miva Open University</option>
-            <option value={"nexford university"}>Nexford University</option>
-            <option value={"Pan Atlantic university"}>
-              Pan Atlantic University
-            </option>
-            <option value={"convenant university"}>Convenant University</option>
-            <option value={"others"}>others</option>
-          </select>
-        </form>
 
         <form
           name="try_demo_form"
