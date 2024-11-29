@@ -4,7 +4,7 @@ import miva from "../assets/images/miva logo.png";
 import nexford from "../assets/images/nexford.png";
 import quantic from "../assets/images/quantic.png";
 import pau from "../assets/images/pau.png";
-import noun from "../assets/images/noun.jpg";
+import noun from "../assets/images/noun.png";
 import nutm from "../assets/images/nutm.png";
 
 const logos = [cu, miva, nexford, quantic, pau, noun, nutm];
@@ -18,7 +18,7 @@ const LogoScroll: React.FC = () => {
             key={index}
             src={logo}
             alt={`Logo ${index + 1}`}
-            className="w-[5rem] md:w-[8rem] lg:w-[10rem] object-contain"
+            className="w-[5rem] md:h-[5rem] md:w-[8rem] lg:w-[9rem]  lg:h-[6.5rem] object-contain "
           />
         ))}
         {logos.map((logo, index) => (
@@ -26,7 +26,7 @@ const LogoScroll: React.FC = () => {
             key={index + logos.length}
             src={logo}
             alt={`Logo ${index + 1}`}
-            className="w-[5rem] md:w-[8rem] lg:w-[10rem] object-contain"
+            className="w-[5rem] md:h-[5rem] md:w-[8rem] lg:w-[9rem] lg:h-[6.5rem] object-contain"
           />
         ))}
       </div>

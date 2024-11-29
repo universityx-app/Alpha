@@ -209,13 +209,34 @@ const Programs: React.FC = () => {
             questions answered by one of our experts.
           </p>
         </div>
+        <form
+          hidden
+          name="try_demo_form"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="text" name="full_name" />
+
+          <input type="email" name="email" />
+          <select name="interest">
+            <option value={"miva open university"}>Miva Open University</option>
+            <option value={"nexford university"}>Nexford University</option>
+            <option value={"Pan Atlantic university"}>
+              Pan Atlantic University
+            </option>
+            <option value={"convenant university"}>Convenant University</option>
+            <option value={"others"}>others</option>
+          </select>
+        </form>
 
         <form
-          name="student-demo-form"
+          name="try_demo_form"
           method="POST"
           onSubmit={handleSubmit}
           className="w-full flex flex-col gap-10"
+          data-netlify="true"
         >
+          <input type="hidden" name="form-name" value="try_demo_form" />
           <div className="flex flex-col gap-4">
             <label
               htmlFor="name"
@@ -226,7 +247,7 @@ const Programs: React.FC = () => {
             <input
               type="text"
               id="name"
-              name="full name"
+              name="full_name"
               className="w-full min-h-[5rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
               required
             />

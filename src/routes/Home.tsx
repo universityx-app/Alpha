@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 // import { IoIosArrowDown } from "react-icons/io";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // , BsSend, BsEnvelope
 // import { CiCalendar } from "react-icons/ci";
@@ -28,6 +28,7 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import LogoScroll from "../components/LogoScroll";
+import { BsQuestionCircle } from "react-icons/bs";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -90,8 +91,8 @@ const Home: React.FC = () => {
           />
         </div>
 
-        <nav className="flex gap-4 items-center justify-between md:gap-5 font-inter">
-          {/* <div className="md:flex items-center gap-5 hidden">
+        {/* <nav className="flex gap-4 items-center justify-between md:gap-5 font-inter">
+          <div className="md:flex items-center gap-5 hidden">
             <button className="text-[#242222] outline-none flex items-center gap-1 text-sm md:text-xl font-medium">
               For Teachers
               <IoIosArrowDown />
@@ -104,7 +105,7 @@ const Home: React.FC = () => {
               Resources
               <IoIosArrowDown />
             </button>
-          </div> */}
+          </div>
           <Link
             to="/programs"
             className="outline-none flex items-center gap-1 text-lg font-medium text-[#242222]"
@@ -117,32 +118,32 @@ const Home: React.FC = () => {
           >
             FAQ
           </button>
-        </nav>
+        </nav> */}
       </header>
       <div className="mt-20 px-5">
-        <div className="flex flex-col gap-2 md:gap-y-5 items-center justify-center md:w-2/3 w-full px-2 mx-auto">
+        <div className="flex flex-col gap-2 md:gap-y-5 items-center justify-center lg:w-2/3 md:w-[95%] w-full px-2 mx-auto">
           <h3 className=" text-4xl lg:text-7xl font-bold font-inter text-center text-[#9C2D9C]">
             Experience the Future of Education with AI-Powered Learning
           </h3>
-          <p className=" md:text-2xl text-center py-3  md:w-2/3 text-[#3b3838]">
+          <p className=" md:text-2xl text-center py-3  lg:w-2/3 text-[#3b3838]">
             Combine the power of artificial intelligence, gamification, and
             community learning to create personalized, and engaging educational
             experiences that drive real results.
           </p>
           <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-3 md:gap-8">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSefrE0SJ71gkQ3Ogga8SY7xvuVQ-XPk_Q91OwF6mSnKYsW_rg/viewform?usp=sf_link"
-              target="_blank" // onClick={() => scrollToPoint("demo_form")}
-              className="flex items-center justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl whitespace-nowrap md:px-10 px-3 py-4 md:py-5 rounded-full"
+            <button
+              onClick={() => scrollToPoint("demo_form")}
+              className="shadow flex whitespace-nowrap  items-center justify-center w-full py-5 bg-[#9C2D9C] text-white font-semibold font-inter text-xl px-3 md:px-10 rounded-full border border-transparent"
             >
               Book a Demo
-            </a>{" "}
-            <Link
-              to="/dashboard"
-              className="flex whitespace-nowrap min-w-[20rem] items-center justify-center w-full py-5 bg-[#9C2D9C] text-white font-semibold font-inter text-xl px-3 md:px-10 rounded-full border border-transparent"
+            </button>{" "}
+            <button
+              onClick={() => scrollToPoint("faq")}
+              className="outline-none whitespace-nowrap flex items-center md:min-w-[24rem] justify-center gap-2 bg-[#fff] border-2 w-full border-[#9C2C9C] text-[#9C2C9C] font-semibold font-inter text-xl md:px-5 px-3 py-4 md:py-5 rounded-full"
             >
-              Try Demo Now
-            </Link>
+              <BsQuestionCircle size={32} color="#9c2d9c" /> Frequently Asked
+              Questions
+            </button>
           </div>
         </div>
 
@@ -155,7 +156,7 @@ const Home: React.FC = () => {
             src={generateLesson}
             width={350}
             height={350}
-            className="-rotate-12 rounded-xl shadow-2xl shadow-[#9c2c9c]/50 w-[9rem] md:w-[21rem]"
+            className="-rotate-12 rounded-xl shadow-2xl shadow-[#9c2c9c]/50 w-[9rem] md:w-[12rem] lg:w-[21rem]"
           />
         </div>
         <div className="absolute -top-[20%] md:-top-[25%] right-4 md:right-10 z-10">
@@ -164,7 +165,7 @@ const Home: React.FC = () => {
             src={aiChat}
             width={350}
             height={350}
-            className="rotate-12 rounded-xl shadow-2xl shadow-blue-600/50 w-[9rem] md:w-[21rem]"
+            className="rotate-12 rounded-xl shadow-2xl shadow-blue-600/50 w-[9rem] md:w-[12rem] lg:w-[21rem]"
           />
         </div>
         <div className="z-30 px-5 flex justify-center">
@@ -176,20 +177,20 @@ const Home: React.FC = () => {
             className="rounded-2xl w-full h-[14rem] md:h-full md:w-[80%]"
           />
         </div>
-        <div className="w-[96%] md:w-[90%] h-40 flex flex-col md:flex-row items-center p-5 md:p-10 rounded-xl shadow-lg border-2 border-[#D9D9D9]">
-          <p className="font-inter md:text-xl md:w-[30%] text-[#1a1a1a]">
+        <div className="w-[96%] lg:w-[90%] h-40 flex flex-col lg:flex-row items-center p-5 lg:p-10 rounded-xl shadow-lg border-2 border-[#D9D9D9]">
+          <p className="font-inter md:text-lg lg:text-xl lg:w-[30%] text-[#1a1a1a]">
             Join other <span className="font-bold">forward thinking</span>{" "}
             institution <span className="italic font-bold">transforming</span>{" "}
             education
           </p>
-          <div className="w-full md:w-[70%] min-h-10">
+          <div className="w-full lg:w-[70%] min-h-10">
             <LogoScroll />
           </div>
         </div>
       </div>
       <div className="px-5 md:px-20 mt-10 md:mt-20 space-y-20 lg:space-y-32">
-        <div className="flex flex-col md:flex-row items-center justify-around w-full">
-          <div className="w-full md:w-1/2">
+        <div className="flex flex-col gap-y-5 lg:flex-row items-center justify-around w-full">
+          <div className="w-full lg:w-1/2">
             <img
               src={sec1}
               alt=""
@@ -199,7 +200,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <div className="md:w-[45%] space-y-3 text-[#1A1A1A]">
+          <div className="lg:w-[45%] space-y-3 text-[#1A1A1A]">
             <h4 className="font-semibold text-2xl md:text-4xl">
               No Setup, No Maintenance, Just Results
             </h4>
@@ -213,8 +214,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row-reverse flex-wrap items-center justify-around">
-          <div className="w-full md:w-1/2">
+        <div className="flex flex-row-reverse gap-y-5 flex-wrap items-center justify-around">
+          <div className="w-full lg:w-1/2">
             <img
               src={sec2}
               alt=""
@@ -224,7 +225,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <div className="w-full md:w-[45%] space-y-3">
+          <div className="w-full lg:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
               AI Course Management That Drives Engagement
             </h4>
@@ -237,8 +238,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-around flex-wrap">
-          <div className="w-full md:w-1/2">
+        <div className="flex items-center gap-y-5 justify-around flex-wrap">
+          <div className="w-full lg:w-1/2">
             <img
               src={sec3}
               alt=""
@@ -248,7 +249,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <div className="w-full md:w-[45%] space-y-3">
+          <div className="w-full lg:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
               Gamified learning environment for student
             </h4>
@@ -262,8 +263,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row-reverse items-center justify-around flex-wrap">
-          <div className="w-full md:w-1/2">
+        <div className="flex flex-row-reverse gap-y-5 items-center justify-around flex-wrap">
+          <div className="w-full lg:w-1/2">
             <img
               src={sec4}
               alt=""
@@ -273,7 +274,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <div className="w-full md:w-[45%] space-y-3">
+          <div className="w-full lg:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
               Revolutionizing Education With Three Core Pillars
             </h4>
@@ -286,8 +287,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-between lg:justify-around flex-wrap">
-          <div className="w-full md:w-1/2">
+        <div className="flex items-center gap-y-5 justify-between lg:justify-around flex-wrap">
+          <div className="w-full lg:w-1/2">
             <img
               src={sec5}
               alt=""
@@ -297,7 +298,7 @@ const Home: React.FC = () => {
             />
           </div>
 
-          <div className="w-full md:w-[45%] space-y-3">
+          <div className="w-full lg:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1a1a1a]">
               Artificial Intelligence
             </h4>
@@ -311,12 +312,12 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className="mt-10 md:mt-20 w-full min-h-[22rem] bg-[#9C2C9C] flex flex-col gap-10 items-center py-10 px-5 md:px-16">
-        <h3 className="font-medium font-inter text-2xl text-white text-center w-full md:w-[45%]">
+        <h3 className="font-medium font-inter text-2xl text-white text-center w-full lg:w-[45%]">
           Our Innovation is Backed by Data from Top Education and Data Sources
           Around The World
         </h3>
         <div className="w-full flex flex-wrap items-center justify-between gap-y-5">
-          <div className="w-full md:w-[30%] min-h-[15rem] bg-white rounded-xl p-8">
+          <div className="w-full lg:w-[30%] min-h-[15rem] bg-white rounded-xl p-8">
             <p className="text-lg text-gray-700">Artificial Intelligence</p>
             <span className="font-medium text-7xl text-[#9C2C9C]">47%</span>
             <p className="text-lg text-gray-700">
@@ -324,14 +325,14 @@ const Home: React.FC = () => {
               personalize content and assessments
             </p>
           </div>
-          <div className="w-full md:w-[30%] h-[15rem] bg-white rounded-xl p-8">
+          <div className="w-full lg:w-[30%] h-[15rem] bg-white rounded-xl p-8">
             <p className="text-lg text-gray-700">Gamification</p>
             <span className="font-medium text-7xl text-[#9C2C9C]">34%</span>
             <p className="text-lg text-gray-700">
               lower dropout rates in courses with gamified learning elements{" "}
             </p>
           </div>
-          <div className="w-full md:w-[30%] h-[15rem] bg-white rounded-xl p-8">
+          <div className="w-full lg:w-[30%] h-[15rem] bg-white rounded-xl p-8">
             <p className="text-lg text-gray-700">Community Learning</p>
             <span className="font-medium text-7xl text-[#9C2C9C]">50%</span>
             <p className="text-lg text-gray-700">
@@ -352,8 +353,8 @@ const Home: React.FC = () => {
         className="p-4 md:p-12 w-full lg:w-3/5 mx-auto flex flex-col gap-8 items-center border border-[#66708538] rounded-[20px] bg-white text-[#242222]"
       >
         <div className="space-y-5">
-          <p className="font-inter font-bold text-3xl md:text-6xl text-black">
-            Try Demo Now
+          <p className="font-inter font-bold text-2xl md:text-4xl text-black">
+            Book A Demo
           </p>
           <p className="font-plus_jakarta font-semibold text-xl md:text-[1.8rem] md:leading-8 text-[#667085]">
             Learn about our product with a live demonstration and have your
@@ -362,11 +363,24 @@ const Home: React.FC = () => {
         </div>
 
         <form
+          hidden
+          name="demo_form"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="text" name="fullname" />
+          <input type="text" name="school_name" />
+          <input type="email" name="email" />
+          <textarea name="interest"></textarea>
+        </form>
+        <form
           name="demo_form"
           method="POST"
           onSubmit={handleSubmit}
           className="w-full flex flex-col gap-10"
+          data-netlify="true"
         >
+          <input type="hidden" name="form-name" value="demo_form" />
           <div className="flex flex-col gap-4">
             <label
               htmlFor="name"
@@ -377,7 +391,7 @@ const Home: React.FC = () => {
             <input
               type="text"
               id="name"
-              name="full name"
+              name="fullName"
               className="w-full min-h-[5rem] outline-none text-3xl text-[#242222] rounded-lg border border-[#B9B3B3] bg-white py-2.5 px-[14px]"
               required
             />
@@ -441,10 +455,10 @@ const Home: React.FC = () => {
         id="faq"
         className="mt-5 md:mt-20 w-full md:py-10 md:px-16 flex flex-col gap-10 items-center"
       >
-        <p className="text-center text-4xl md:text-5xl font-semibold text-[#242222]">
+        <p className="text-center text-2xl md:text-4xl font-semibold text-[#242222]">
           Frequently Asked Questions
         </p>
-        <div className="w-full md:w-10/12 min-h-[20rem] bg-gray-100 py-2 px-4">
+        <div className="w-full lg:w-10/12 min-h-[20rem] bg-gray-100 py-2 px-4">
           <div className="w-full h-full bg-white rounded-md shadow-md py-2 px-3">
             {faq_list}
           </div>
@@ -495,7 +509,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div> */}
-      <footer className="w-full min-h-[5rem] bg-black md:border-x-[12px] md:border-t-[12px] border-gray-700 mt-10 md:mt-20 px-5 pt-5 md:px-20 md:pt-20 space-y-10">
+      <footer className="w-full min-h-[4rem] bg-black mt-10 md:mt-20 px-5 pt-5 md:px-20  space-y-10">
         {/* <div className="flex flex-wrap items-center justify-between gap-y-5">
           <div className="w-full lg:w-3/5 flex flex-wrap items-start justify-between gap-y-6">
             <div className="text-white space-y-2 md:space-y-4">
@@ -577,7 +591,7 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div> */}
-        <div className="border- border-[#F5F5F5] py-5 flex items-center justify-between">
+        <div className=" py-5 flex items-center justify-between">
           <svg
             width="170"
             height="48"
@@ -587,7 +601,7 @@ const Home: React.FC = () => {
           >
             <path
               d="M23.1265 25.5654H22.4688C24.0632 24.1724 25.072 22.1252 25.072 19.8467V9.875H26.8125V15.25H28.6875V9.875H30.3438V8H5.03125V9.875H9.88452V19.8467C9.88452 22.1252 10.8936 24.1724 12.4878 25.5654H12.2485C7.7002 25.5654 4 29.2659 4 33.814V40H31.375V33.814C31.375 29.2659 27.6748 25.5654 23.1265 25.5654ZM23.197 9.875V16.0625H11.7595V9.875H23.197ZM11.7595 19.8467V17.9375H23.197V19.8467C23.197 23 20.6316 25.5654 17.4783 25.5654C14.325 25.5654 11.7595 23 11.7595 19.8467ZM21.6497 27.4404L17.6875 32.7983L13.7253 27.4404H21.6497ZM29.5 38.125H5.875V33.814C5.875 30.5764 8.30176 27.8948 11.4316 27.4927L17.6875 35.9517L23.9434 27.4927C27.0732 27.8948 29.5 30.5764 29.5 33.814V38.125Z"
-              fill="#9C2D9C"
+              fill="#FFFFFF"
             />
             <path
               d="M62.016 12.76V26.936C62.016 28.6213 62.4533 29.8907 63.328 30.744C64.224 31.5973 65.4613 32.024 67.04 32.024C68.64 32.024 69.8773 31.5973 70.752 30.744C71.648 29.8907 72.096 28.6213 72.096 26.936V12.76H75.744V26.872C75.744 28.6853 75.3493 30.2213 74.56 31.48C73.7707 32.7387 72.7147 33.6773 71.392 34.296C70.0693 34.9147 68.608 35.224 67.008 35.224C65.408 35.224 63.9467 34.9147 62.624 34.296C61.3227 33.6773 60.288 32.7387 59.52 31.48C58.752 30.2213 58.368 28.6853 58.368 26.872V12.76H62.016ZM89.3898 17.08C90.7764 17.08 92.0138 17.368 93.1018 17.944C94.2111 18.52 95.0751 19.3733 95.6938 20.504C96.3124 21.6347 96.6218 23 96.6218 24.6V35H93.0058V25.144C93.0058 23.5653 92.6111 22.36 91.8218 21.528C91.0324 20.6747 89.9551 20.248 88.5898 20.248C87.2244 20.248 86.1364 20.6747 85.3258 21.528C84.5364 22.36 84.1418 23.5653 84.1418 25.144V35H80.4938V17.368H84.1418V19.384C84.7391 18.6587 85.4964 18.0933 86.4138 17.688C87.3524 17.2827 88.3444 17.08 89.3898 17.08ZM103.131 15.032C102.47 15.032 101.915 14.808 101.467 14.36C101.019 13.912 100.795 13.3573 100.795 12.696C100.795 12.0347 101.019 11.48 101.467 11.032C101.915 10.584 102.47 10.36 103.131 10.36C103.771 10.36 104.315 10.584 104.763 11.032C105.211 11.48 105.435 12.0347 105.435 12.696C105.435 13.3573 105.211 13.912 104.763 14.36C104.315 14.808 103.771 15.032 103.131 15.032ZM104.923 17.368V35H101.275V17.368H104.923ZM116.529 31.736L121.521 17.368H125.392L118.673 35H114.321L107.633 17.368H111.536L116.529 31.736ZM144.31 25.752C144.31 26.4133 144.267 27.0107 144.182 27.544H130.71C130.817 28.952 131.339 30.0827 132.278 30.936C133.217 31.7893 134.369 32.216 135.734 32.216C137.697 32.216 139.083 31.3947 139.894 29.752H143.83C143.297 31.3733 142.326 32.7067 140.918 33.752C139.531 34.776 137.803 35.288 135.734 35.288C134.049 35.288 132.534 34.9147 131.19 34.168C129.867 33.4 128.822 32.3333 128.054 30.968C127.307 29.5813 126.934 27.9813 126.934 26.168C126.934 24.3547 127.297 22.7653 128.022 21.4C128.769 20.0133 129.803 18.9467 131.126 18.2C132.47 17.4533 134.006 17.08 135.734 17.08C137.398 17.08 138.881 17.4427 140.182 18.168C141.483 18.8933 142.497 19.9173 143.222 21.24C143.947 22.5413 144.31 24.0453 144.31 25.752ZM140.502 24.6C140.481 23.256 140.001 22.1787 139.062 21.368C138.123 20.5573 136.961 20.152 135.574 20.152C134.315 20.152 133.238 20.5573 132.342 21.368C131.446 22.1573 130.913 23.2347 130.742 24.6H140.502ZM151.548 19.928C152.081 19.032 152.785 18.3387 153.66 17.848C154.556 17.336 155.612 17.08 156.828 17.08V20.856H155.9C154.471 20.856 153.383 21.2187 152.636 21.944C151.911 22.6693 151.548 23.928 151.548 25.72V35H147.9V17.368H151.548V19.928ZM166.581 35.288C165.195 35.288 163.947 35.0427 162.837 34.552C161.749 34.04 160.885 33.3573 160.245 32.504C159.605 31.6293 159.264 30.6587 159.221 29.592H162.997C163.061 30.3387 163.413 30.968 164.053 31.48C164.715 31.9707 165.536 32.216 166.517 32.216C167.541 32.216 168.331 32.024 168.885 31.64C169.461 31.2347 169.749 30.7227 169.749 30.104C169.749 29.4427 169.429 28.952 168.789 28.632C168.171 28.312 167.179 27.96 165.813 27.576C164.491 27.2133 163.413 26.8613 162.581 26.52C161.749 26.1787 161.024 25.656 160.405 24.952C159.808 24.248 159.509 23.32 159.509 22.168C159.509 21.2293 159.787 20.376 160.341 19.608C160.896 18.8187 161.685 18.2 162.709 17.752C163.755 17.304 164.949 17.08 166.293 17.08C168.299 17.08 169.909 17.592 171.125 18.616C172.363 19.6187 173.024 20.9947 173.109 22.744H169.461C169.397 21.9547 169.077 21.3253 168.501 20.856C167.925 20.3867 167.147 20.152 166.165 20.152C165.205 20.152 164.469 20.3333 163.957 20.696C163.445 21.0587 163.189 21.5387 163.189 22.136C163.189 22.6053 163.36 23 163.701 23.32C164.043 23.64 164.459 23.896 164.949 24.088C165.44 24.2587 166.165 24.4827 167.125 24.76C168.405 25.1013 169.451 25.4533 170.261 25.816C171.093 26.1573 171.808 26.6693 172.405 27.352C173.003 28.0347 173.312 28.9413 173.333 30.072C173.333 31.0747 173.056 31.9707 172.501 32.76C171.947 33.5493 171.157 34.168 170.133 34.616C169.131 35.064 167.947 35.288 166.581 35.288ZM179.131 15.032C178.47 15.032 177.915 14.808 177.467 14.36C177.019 13.912 176.795 13.3573 176.795 12.696C176.795 12.0347 177.019 11.48 177.467 11.032C177.915 10.584 178.47 10.36 179.131 10.36C179.771 10.36 180.315 10.584 180.763 11.032C181.211 11.48 181.435 12.0347 181.435 12.696C181.435 13.3573 181.211 13.912 180.763 14.36C180.315 14.808 179.771 15.032 179.131 15.032ZM180.923 17.368V35H177.275V17.368H180.923ZM189.969 20.344V30.104C189.969 30.7653 190.118 31.2453 190.417 31.544C190.737 31.8213 191.27 31.96 192.017 31.96H194.257V35H191.377C189.734 35 188.475 34.616 187.601 33.848C186.726 33.08 186.289 31.832 186.289 30.104V20.344H184.209V17.368H186.289V12.984H189.969V17.368H194.257V20.344H189.969ZM213.491 17.368L202.675 43.288H198.899L202.483 34.712L195.539 17.368H199.603L204.563 30.808L209.715 17.368H213.491ZM226.452 23.896L233.364 35H229.268L224.244 26.936L219.54 35H215.476L222.388 23.896L215.444 12.76H219.54L224.596 20.888L229.332 12.76H233.396L226.452 23.896Z"

@@ -10,16 +10,21 @@ const Collapsible: React.FC<CollapsibleProp> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="py-3 border-b border-gray-200">
-      <div className="flex items-center gap-3">
+      <div className="">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className={`${
-            isOpen && "rotate-45"
-          } transition outline-none ease-in-out duration-200`}
+          className={`flex items-center gap-3 outline-none text-left`}
         >
-          <FaPlus color="#1a1a1a" size={20} />
-        </button>{" "}
-        <p className="font-medium text-lg text-[#1A1A1A]">{question}</p>
+          <span
+            className={`${
+              isOpen && "rotate-45 "
+            } transition outline-none ease-in-out duration-400 `}
+          >
+            <FaPlus color="#1a1a1a" size={20} />
+          </span>
+
+          <p className="font-medium text-xl text-[#1A1A1A]">{question}</p>
+        </button>
       </div>
       <div
         className={`${
