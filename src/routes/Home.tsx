@@ -12,11 +12,11 @@ import aiChat from "../assets/images/AIChat.png";
 // import courseAction from "../assets/images/CourseAction.png";
 // import bg2 from "../assets/images/bg2.png";
 // import bg3 from "../assets/images/bg3.png";
-import sec1 from "../assets/images/main1.png";
-import sec2 from "../assets/images/main2.png";
-import sec3 from "../assets/images/main3.png";
-import sec4 from "../assets/images/sec4.png";
-import sec5 from "../assets/images/sec5.png";
+import sec1 from "../assets/images/main11.png";
+import sec2 from "../assets/images/main22.png";
+import sec3 from "../assets/images/main33.png";
+import sec4 from "../assets/images/sec44.png";
+import sec5 from "../assets/images/sec55.png";
 import Scroll from "../components/admin/Scroll";
 // import ReviewScroll from "../components/admin/ReviewScroll";
 import Collapsible from "../components/admin/Collapsible";
@@ -276,14 +276,15 @@ const Home: React.FC = () => {
 
           <div className="w-full lg:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1A1A1A]">
-              Revolutionizing Education With Three Core Pillars
+              Meet Your Personalized AI Tutor
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              UniversityX is built on three guiding principles that transform
-              the way institutions teach, engage, and support students. Through
-              the power of Artificial Intelligence, the excitement of
-              Gamification, and the support of Community Learning, we’re
-              redefining what’s possible in education and training.
+              Our AI Tutor is the heart of what makes UniversityX truly
+              revolutionary. Imagine having a 24/7 learning companion that you
+              can chat with using voice or text, share your notes, and get
+              instant, tailored support. Whether you’re stuck on a tough concept
+              or need guidance, our AI Tutor is there — even with lifelike
+              facial expressions that make learning feel natural and human.
             </p>
           </div>
         </div>
@@ -300,17 +301,19 @@ const Home: React.FC = () => {
 
           <div className="w-full lg:w-[45%] space-y-3">
             <h4 className="font-semibold text-2xl md:text-4xl text-[#1a1a1a]">
-              Artificial Intelligence
+              Turn Simple Resources into Engaging Learning Journey
             </h4>
             <p className="md:text-2xl text-[#2b2a2a]">
-              From smart content creation to personalized learning pathways, AI
-              is the backbone of every experience. It empowers both instructors
-              and learners to work smarter – it transforms how you teach and how
-              students learn.
+              With UniversityX, lecturers and students can upload PDFs or share
+              links, and our AI transforms them into complete, interactive
+              learning paths. From AI-generated videos and podcasts to quizzes,
+              flashcards, and engaging lessons, we make it effortless to create
+              immersive educational experiences.
             </p>
           </div>
         </div>
       </div>
+
       <div className="mt-10 md:mt-20 w-full min-h-[22rem] bg-[#9C2C9C] flex flex-col gap-10 items-center py-10 px-5 md:px-16">
         <h3 className="font-medium font-inter text-2xl text-white text-center w-full lg:w-[45%]">
           Our Innovation is Backed by Data from Top Education and Data Sources
