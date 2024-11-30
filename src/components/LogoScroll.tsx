@@ -4,10 +4,10 @@ import miva from "../assets/images/miva logo.png";
 import nexford from "../assets/images/nexford.png";
 import quantic from "../assets/images/quantic.png";
 import pau from "../assets/images/pau.png";
-import noun from "../assets/images/noun.png";
+// import noun from "../assets/images/noun.png";
 import nutm from "../assets/images/nutm.png";
 
-const logos = [cu, miva, nexford, quantic, pau, noun, nutm];
+const logos = [cu, miva, nexford, quantic, pau, nutm];
 
 const LogoScroll: React.FC = () => {
   return (
