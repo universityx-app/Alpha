@@ -387,7 +387,7 @@ const Home: React.FC = () => {
               htmlFor="school"
               className="font-plus_jakarta font-semibold text-xl md:text-[2rem] leading-6 text-[#242222]"
             >
-              What is name the of your school?{" "}
+              What's the name of your school?{" "}
               <span className="text-[#A02240]">*</span>
             </label>
             <input
